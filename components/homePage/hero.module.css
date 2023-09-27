@@ -3,19 +3,25 @@
     background-image: linear-gradient(
       to bottom,
       var(--color-grey-900),
-      var(--color-grey-800)
+      var(--color-grey-400)
     );
     padding: var(--size-8) 0;
+    margin-bottom: 2rem;
   }
   
   .image {
-    width: 300px;
-    height: 300px;
+    /* width: 340px; */
+    height: 320px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 50%;
+    border-radius: 5%;
     overflow: hidden;
     background-color: var(--color-grey-700);
-    margin: auto;
+    /* margin: auto; */
+    object-fit: cover;
+  }
+  .reactive {
+    width: 100%; /* Make the video width 100% of its container */
+    max-height: 100vh; /* Limit the video height to 100% of the viewport height */
   }
   
   .image img {
@@ -29,12 +35,14 @@
     font-size: var(--size-16);
     margin: var(--size-4) 0;
     color: var(--color-grey-300);
+    margin-bottom: 0.5rem;
   }
   
   .hero p {
     font-size: var(--size-6);
     color: var(--color-grey-200);
     width: 90%;
-    max-width: 40rem;
+    /* max-width: 40rem; */
     margin: auto;
+   
   }

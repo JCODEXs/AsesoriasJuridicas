@@ -2,6 +2,8 @@ import React, { ReactNode } from 'react';
 import Head from 'next/head';
 import './globals.css';
 import Layout from '../../components/layout/layout';
+import HomePage from "./index"
+
 
 interface HomeProps {
   Component: ReactNode;
@@ -10,14 +12,16 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ Component, pageProps }) => {
   return (
-    <Layout>
+    <> 
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel="icon" href="../../public/images/site/icono.png" />
       </Head>
-      {Component && React.isValidElement(Component) ? (
-        React.cloneElement(Component, pageProps)
-      ) : null}
-    </Layout>
+    
+      <HomePage/>
+      {pageProps}
+    </>
+   
   );
 };
 

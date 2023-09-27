@@ -1,13 +1,21 @@
-.logo {
+.logo { 
+  display: flex;
+   margin-top: 1rem;
     text-transform: uppercase;
     font-size: var(--size-5);
-    font-weight: bold;
+    /* font-weight: bold; */
     font-family: 'Oswald', sans-serif;
     color: var(--color-grey-50);
+    align-items: center;
   }
   
   @media (min-width: 768px) {
     .logo {
       font-size: var(--size-8);
     }
+  }
+  .image{
+    margin-top: 4rem;
+    height: 150;
+    width: 150;
   }
