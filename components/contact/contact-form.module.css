@@ -51,7 +51,7 @@
     text-align: right;
   }
   
-  .form button {
+  /* .form button {
     font: inherit;
     cursor: pointer;
     background-color: var(--color-primary-700);
@@ -60,7 +60,7 @@
     border-radius: 4px;
     color: var(--color-primary-50);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  }
+  } */
   
   .form button:hover {
     background-color: var(--color-primary-500);

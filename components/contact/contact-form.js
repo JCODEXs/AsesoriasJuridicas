@@ -67,16 +67,16 @@ function ContactForm() {
   if (requestStatus === 'pending') {
     notification = {
       status: 'pending',
-      title: 'Sending message...',
-      message: 'Your message is on its way!',
+      title: 'Enviando mensaje...',
+      message: 'Tu mensaje esta siendo enviado..',
     };
   }
 
   if (requestStatus === 'success') {
     notification = {
       status: 'success',
-      title: 'Success!',
-      message: 'Message sent successfully!',
+      title: 'Exito!',
+      message: 'Mensaje Enviado Exitosamente!',
     };
   }
 
@@ -91,7 +91,7 @@ function ContactForm() {
   return (
     <div style={{display:'flex',flexDirection:'row',flexWrap:"wrap",overflowY:"scroll",height:"100%"}}>
       <section className={styles.contact}>
-        <h1>¿Como podemos ayudarte?</h1>
+        <h1>¿Como podemos ayudarle?</h1>
         <form className={styles.form} onSubmit={sendMessageHandler}>
           <div className={styles.controls}>
             <div className={styles.control}>
@@ -128,6 +128,7 @@ function ContactForm() {
           <div className={styles.actions}>
             <button>Enviar📨</button>
           </div>
+          <h1>Ingrese su informacion y nos pondremos en contacto con Usted</h1>
         </form>
         {notification && (
           <Notification
@@ -136,7 +137,7 @@ function ContactForm() {
             message={notification.message}
           />
         )}
-        <pre>{JSON.stringify(notification,null,2)}</pre>
+        {/* <pre>{JSON.stringify(notification,null,2)}</pre> */}
       </section>
       <div className={styles.image}>
        <Image

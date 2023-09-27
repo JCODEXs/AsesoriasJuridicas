@@ -1,6 +1,6 @@
 .posts {
-  width: 94%;
-  max-width: 60rem;
+  width: 98%;
+  /* max-width: 60rem; */
   margin: var(--size-8) auto;
 }
 

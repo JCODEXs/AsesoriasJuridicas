@@ -87,7 +87,9 @@ a {
 }
 
 button {
-  font-size: 1.3rem;
+  font-size: 1.27rem;
   margin:0.1rem;
   padding: 0.1rem;
+  border-radius: 3px;
+  box-shadow: #16abff33;
 }

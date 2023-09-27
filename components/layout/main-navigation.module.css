@@ -43,7 +43,7 @@
   /* main-navigation.module.css */
 .header {
   background-color: #f2eded; 
-  color: rgb(15, 14, 14); 
+  color: navy;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -52,7 +52,7 @@
 
 .header a {
   text-decoration: none; /* Remove underlines from links */
-  color: rgb(24, 22, 22); /* Link text color */
+  color:rgb(1, 1, 56); /* Link text color */
   margin-right: 1rem; /* Add spacing between links */
 }
 
@@ -63,7 +63,8 @@
 }
 
 .nav ul li {
-  font-size: 1.2rem; /* Adjust font size for list items */
+  font-size: 1.2rem; 
+  color: navy;/* Adjust font size for list items */
 }
 
 /* Style the logo if needed */

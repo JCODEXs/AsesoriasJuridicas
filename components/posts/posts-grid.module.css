@@ -1,9 +1,10 @@
 .grid {
+  background:linear-gradient(to bottom, #023b74c8, #052443b1);
   list-style: none;
   margin: 5;
   padding: 0.1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 5fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 4fr));
+  gap: 2.5rem;
   align-content: center;
 }
