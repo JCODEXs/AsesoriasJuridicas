@@ -27,7 +27,7 @@ function PostDetailPage({params}) {
 
 
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
   const postFilenames = getPostsFiles();
 
   const slugs = postFilenames.map((fileName) => fileName.replace(/\.pdf$/, ''));
@@ -37,5 +37,6 @@ export function getStaticPaths() {
     fallback: false,
   };
 }
+
 
 export default PostDetailPage;
