@@ -1,16 +1,10 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import './globals.css';
 import Layout from '../../components/layout/layout';
 import HomePage from "./index"
 
-
-interface HomeProps {
-  Component: ReactNode;
-  pageProps: any; // Replace 'any' with the actual type of pageProps
-}
-
-const Home: React.FC<HomeProps> = ({ Component, pageProps }) => {
+const Home: React.FC = () => {
   return (
     <> 
       <Head>
@@ -19,9 +13,8 @@ const Home: React.FC<HomeProps> = ({ Component, pageProps }) => {
       </Head>
     
       <HomePage/>
-      {pageProps}
+      {/* Render other components or content here */}
     </>
-   
   );
 };
 
