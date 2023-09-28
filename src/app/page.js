@@ -4,12 +4,12 @@ import './globals.css';
 import Layout from '../../components/layout/layout';
 import HomePage from "./index"
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <> 
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel="icon" href="../../public/images/site/icono.png" />
+        <link rel="icon" href="images/site/icono.png" />
       </Head>
     
       <HomePage/>

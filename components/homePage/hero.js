@@ -53,6 +53,7 @@ console.log(videoRef)
         <h1>Hola soy Edgar Tabares </h1>
         <button onClick={handlePlay}>🔊</button>
       </div>
+        <q>Soy CASACIONISTA porque llevo en la sangre justicia</q>
       <div className={classes.image}>
       <video
           className={classes.reactive}
