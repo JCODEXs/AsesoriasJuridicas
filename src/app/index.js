@@ -13,7 +13,7 @@ function HomePage(props) {
         <title>Pensiones Colombianos</title>
         <meta
           name='description'
-          content='I post about programming and web development.'
+          content='Ai to the service of humanity.'
         />
       </Head>
       <Hero />

@@ -1,0 +1,43 @@
+
+
+/* Style the contact info container */
+.contactInfo {
+    display: flex;
+    align-items: "space-evenly";
+    justify-content: space-evenly;
+    font-family: Arial, sans-serif;
+    background: #1629d0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(179, 57, 57)
+}
+
+/* Style the list */
+.contactInfo ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style each list item */
+.contactInfo li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Style the icons */
+.contactInfo i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Style the text */
+.contactInfo span {
+    font-size: 16px;
+}
+
+/* Add additional styles as needed */
+.icon {
+    font-size: medium;
+    margin: 5px;
+}

@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10%;
+    padding: 0 3%;
   }
   
   .header ul {
@@ -42,12 +42,14 @@
   }
   /* main-navigation.module.css */
 .header {
-  background-color: #f2eded; 
+  background: #e5d3d3; 
+  /* background-image: url("/images/site/background2.png"); */
+  filter: opacity(0.8);
   color: navy;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.2rem;
 }
 
 .header a {

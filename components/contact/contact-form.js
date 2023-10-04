@@ -89,7 +89,7 @@ function ContactForm() {
   }
 
   return (
-    <div style={{display:'flex',flexDirection:'row',flexWrap:"wrap",overflowY:"scroll",height:"100%"}}>
+    <div style={{display:'flex',flexDirection:'row',flexWrap:"wrap",overflowY:"scroll",height:"100%",marginBottom:"3rem"}}>
       <section className={styles.contact}>
         <h1>¿Como podemos ayudarle?</h1>
         <form className={styles.form} onSubmit={sendMessageHandler}>
@@ -125,9 +125,9 @@ function ContactForm() {
               onChange={(event) => setEnteredMessage(event.target.value)}
             ></textarea>
           </div>
-          <div className={styles.actions}>
-            <button>Enviar📨</button>
-          </div>
+          
+            <button className="SubmitButton" >Enviar📨</button>
+     
           <h1>Ingrese su informacion y nos pondremos en contacto con Usted</h1>
         </form>
         {notification && (

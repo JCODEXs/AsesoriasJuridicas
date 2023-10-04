@@ -2,6 +2,7 @@
   width: 98%;
   /* max-width: 60rem; */
   margin: var(--size-8) auto;
+  padding:1rem
 }
 
 .posts h1 {

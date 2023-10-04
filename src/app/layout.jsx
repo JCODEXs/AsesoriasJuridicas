@@ -1,6 +1,7 @@
 import './globals.css'
 
 import Layout from '../../components/layout/layout'
+import FooterSimple from '../../components/footer/simple'
 
 
 export const metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({
             <body >
           <div id="notifications"></div>
               <Layout>{children}</Layout>
+              <FooterSimple/>
               </body>
           </html>
   )

@@ -75,10 +75,13 @@ console.log(videoRef)
           width={200}
           height={200}
         /> */}
-      <h2>NUESTRO COMPROMISO ES USTED!</h2>
-      <p> Tenemos la experiencia para garantizar el éxito en demandas por pensión de vejez, invalidez, sobreviiente, tutelas y recursos de casacion ante la Corte Suprema de Justicia, Sala Laboral. 
-      </p>
-      <p> Para ello, tenemos un equipo con Alta calidad humana, que se compromete con cada gestión que se realice para conseguir la pensión a que tiene derecho o indemnización de perjuicios para los pensionados o Afiliados que se trasladaron por engaño de los fondos privados de pensión.</p>
+      <div style={{margin:"2rem"}}>
+        <h2>NUESTRO COMPROMISO ES USTED!</h2>
+        <p> Tenemos la experiencia para garantizar el éxito en demandas por pensión de vejez, invalidez, sobreviiente, tutelas y recursos de casacion ante la Corte Suprema de Justicia, Sala Laboral.
+        </p>
+        <p> Para ello, tenemos un equipo con Alta calidad humana, que se compromete con cada gestión que se realice para conseguir la pensión a que tiene derecho o indemnización de perjuicios para los pensionados o Afiliados que se trasladaron por engaño de los fondos privados de pensión.</p>
+        
+      </div>
       </div>
     </section>
   );
