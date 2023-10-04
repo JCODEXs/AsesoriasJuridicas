@@ -4,7 +4,7 @@ const ContactInfo = () => {
   return (
     <div className={classes.contactinfo}>
     <ul>
-        <li>
+        <li >
             <i className={classes.icon}>📧</i>
             <span>asesoriastabares@hotmail.com</span>
         </li>
