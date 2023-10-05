@@ -20,10 +20,10 @@ function FooterSimple() {
     objectFit: 'cover',
   };
     return (
-      <div class="footer" style={{display:"flex", flexDirection:"column", justifyContent:"flex-start", borderTop:"2px solid black" ,fontSize:"0.8rem",width:"100%"}}> 
+      <div class="footer" style={{display:"flex", flexDirection:"column", justifyContent:"space-between", borderTop:"2px solid black" ,fontSize:"0.75rem",width:"100%"}}> 
       
-      <div style={{display:"flex", flexDirection:"row", justifyContent:"flex-start"}}>
-        <div style={{display:"flex", flexDirection:"column", justifyContent:"flex-start",fontSize:"0.8rem",width:"35%"}} >
+      <div style={{display:"flex", flexDirection:"row", justifyContent:"space-between"}}>
+        <div style={{display:"flex", flexDirection:"column", justifyContent:"flex-start",fontSize:"0.7rem",margin:"1rem"}} >
           <div>
             <p style={linkStyle}>
              <Link href="/contact" target="undefined">

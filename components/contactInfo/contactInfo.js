@@ -5,8 +5,8 @@ const ContactInfo = () => {
     <div className={classes.contactinfo}>
     <ul>
         <li >
-            <i className={classes.icon}>📧</i>
-            <span>asesoriastabares@hotmail.com</span>
+            <i className={classes.icon}></i>
+            <span>📧asesoriastabares@hotmail.com</span>
         </li>
         <li>
             <i className={classes.icon}>📞</i>
