@@ -133,3 +133,8 @@ section {
 li{
   list-style-type: none
 }
+
+.pdfViewer {
+  height: auto;
+  width: 100%;
+}

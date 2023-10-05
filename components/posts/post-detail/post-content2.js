@@ -71,7 +71,7 @@ const PDFViewer = (props) => {
     }
   };
   return (
-    <div className="pdf-viewer">
+    <div className="pdfViewer">
 
       <div className="pagination">
         <div style={{display:'flex',justifyContent:"space-evenly", fontSize: "1.4rem",
@@ -100,7 +100,7 @@ const PDFViewer = (props) => {
         </button>
          
       </div>
-      <div style={{ width: '400px', height: '600px' }}>
+      <div style={{ width: '100%', height: 'auto',overflow:'scroll' }}>
 
           {pdfBlob && (
             
