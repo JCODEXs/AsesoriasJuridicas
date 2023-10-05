@@ -41,9 +41,6 @@ function ContactForm() {
 
   async function sendMessageHandler(event) {
     event.preventDefault();
-
-    // optional: add client-side validation
-
     setRequestStatus('pending');
 
     try {
