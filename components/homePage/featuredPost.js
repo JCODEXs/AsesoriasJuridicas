@@ -5,7 +5,7 @@ function FeaturedPosts(props) {
   return (
     <section className={classes.latest}>
       <h1>Sentencias destacadas</h1>
-      <p>.</p>
+      <p></p>
       <PostsGrid posts={props.posts} />
     </section>
   );
