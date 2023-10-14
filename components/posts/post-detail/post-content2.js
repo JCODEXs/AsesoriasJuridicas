@@ -34,7 +34,7 @@ const PDFViewer = (props) => {
         console.error('Error loading PDF:', error);
       });
    
-  }, [post.slug]);
+  }, [post.slug,pdfPath]);
 
   const handleZoomIn = () => {
     setScale(scale + 0.12); // Increase the scale factor for zooming in
