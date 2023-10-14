@@ -14,9 +14,10 @@
     /* width: 340px; */
     min-height: 420px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 5%;
+    /* border-radius: 5%; */
     overflow: hidden;
     background-color: var(--color-grey-700);
+    background:"rgba(242, 188, 27, 0.5)"
     /* margin: auto; */
     /* object-fit: cover; */
   }

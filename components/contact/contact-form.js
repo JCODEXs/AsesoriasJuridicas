@@ -86,7 +86,7 @@ function ContactForm() {
   }
 
   return (
-    <div style={{display:'flex',flexDirection:'row',flexWrap:"wrap",overflowY:"scroll",height:"100%",marginBottom:"3rem"}}>
+    <div style={{display:'flex',flexDirection:'row',flexWrap:"wrap",overflowY:"scroll",height:"100%",marginBottom:"3rem",minHeight:"70vh"}}>
       <section className={styles.contact}>
         <h1>¿Como podemos ayudarle?</h1>
         <form className={styles.form} onSubmit={sendMessageHandler}>
@@ -94,6 +94,7 @@ function ContactForm() {
             <div className={styles.control}>
               <label htmlFor='email'> Email</label>
               <input
+              style={{border:" 1px solid #0D0D0D"}}
                 type='email'
                 id='email'
                 required
@@ -104,6 +105,7 @@ function ContactForm() {
             <div className={styles.control}>
               <label htmlFor='name'>Nombre</label>
               <input
+               style={{border: "1px solid #0D0D0D"}}
                 type='text'
                 id='name'
                 required
@@ -115,6 +117,7 @@ function ContactForm() {
           <div className={styles.control}>
             <label htmlFor='message'>Mensaje</label>
             <textarea
+             style={{border: "1px solid #0D0D0D"}}
               id='message'
               rows='5'
               required

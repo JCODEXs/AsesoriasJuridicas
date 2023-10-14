@@ -2,7 +2,7 @@ import React from 'react'
 import classes from "./contactInfo.module.css"
 const ContactInfo = () => {
   return (
-    <div className={classes.contactinfo}>
+    <div className={classes.contactInfo}>
     <ul>
         <li >
             <i className={classes.icon}></i>

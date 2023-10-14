@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import './globals.css';
-import Layout from '../../components/layout/layout';
 import HomePage from "./index"
 
 const Home = () => {

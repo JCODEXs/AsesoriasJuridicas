@@ -42,7 +42,7 @@
   }
   /* main-navigation.module.css */
 .header {
-  background: #e5d3d3; 
+  background: #0D0D0D;
   /* background-image: url("/images/site/background2.png"); */
   filter: opacity(0.8);
   color: navy;
@@ -54,7 +54,7 @@
 
 .header a {
   text-decoration: none; /* Remove underlines from links */
-  color:rgb(1, 1, 56); /* Link text color */
+  color:#D92323; /* Link text color */
   margin-right: 1rem; /* Add spacing between links */
 }
 
@@ -66,7 +66,7 @@
 
 .nav ul li {
   font-size: 1.2rem; 
-  color: navy;/* Adjust font size for list items */
+  color: #D92323
 }
 
 /* Style the logo if needed */

@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import Logo from './logo';
 import classes from './main-navigation.module.css';
+import FadeMenu from './menu';
 
 function MainNavigation() {
   return (
@@ -14,10 +15,10 @@ function MainNavigation() {
       <nav>
         <ul>
           <li>
-            <Link href='/posts'>Sentencias</Link>
+          <Link href='/contact'>Contacto</Link>
           </li>
           <li>
-            <Link href='/contact'>Contacto</Link>
+          <FadeMenu/>  {/* <Link href='/contact'>Contacto</Link> */}
           </li>
         </ul>
       </nav>

@@ -8,7 +8,8 @@ import { getFeaturedPosts } from '../../lib/posts-util';
 function HomePage(props) {
   const featuredPosts = getFeaturedPosts();
   return (
-    <Fragment>
+    <Fragment
+    style={{background: "rgb(10,10,15,0.5)"}} >
       <Head>
         <title>Pensiones Colombianos</title>
         <meta

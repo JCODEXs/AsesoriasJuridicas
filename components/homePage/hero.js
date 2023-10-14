@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import classes from './hero.module.css';
 import { useEffect, useRef, useState } from 'react';
+import EmailForm from '../footer/emailForm';
 
 function Hero() {
   const videoRef = useRef(null);
@@ -63,7 +64,7 @@ console.log(videoRef)
           muted={isMuted}
           loop
           width={350} // Set the width of the video
-          height={310} // Set the height of the video
+          height={280} // Set the height of the video
         >
           <source src="./images/site/Pensiones_Colombianos._720p.mp4" type="video/mp4" />
           {/* Add additional source elements for other video formats if needed */}
@@ -75,12 +76,12 @@ console.log(videoRef)
           width={200}
           height={200}
         /> */}
-      <div style={{margin:"2rem"}}>
+      <div style={{margin:"0.5rem"}}>
         <h2>NUESTRO COMPROMISO ES USTED!</h2>
         <p> Tenemos la experiencia para garantizar el éxito en demandas por pensión de vejez, invalidez, sobreviiente, tutelas y recursos de casacion ante la Corte Suprema de Justicia, Sala Laboral.
         </p>
         <p> Para ello, tenemos un equipo con Alta calidad humana, que se compromete con cada gestión que se realice para conseguir la pensión a que tiene derecho o indemnización de perjuicios para los pensionados o Afiliados que se trasladaron por engaño de los fondos privados de pensión.</p>
-        
+        <EmailForm/>
       </div>
       </div>
     </section>

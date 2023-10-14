@@ -1,11 +1,12 @@
 .grid {
-  background:linear-gradient(to bottom, #023b74c8, #052443b1);
+  background:linear-gradient(to bottom,#233D8C,#030A8C);
   list-style: none;
-  margin: 5;
+  margin: .1rem;
   padding: 0.1rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(14rem, 4fr));
   gap: 3.5rem;
   align-content: center;
+  justify-content: center;
   width: 100%;
 }
