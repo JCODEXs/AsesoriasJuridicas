@@ -1,5 +1,5 @@
 "use client"
-import { useAuth } from "@clerk/nextjs";
+import { useAuth, useUser } from "@clerk/nextjs";
 import UserList from "../../../components/contact/contactsList";
 import { useEffect, useState } from "react";
 // import fetchData from "../../../lib/posts-util";
@@ -8,9 +8,15 @@ import { useEffect, useState } from "react";
 
 export default function Admin(users) {
   const { isLoaded, userId, sessionId, getToken } = useAuth();
+  const {user}=useUser()
   const [data, setData] = useState(null)
   const [isLoading, setLoading] = useState(true)
- 
+  const userEmail = user?.emailAddresses[0]?.emailAddress;
+  const targetEmailAddresses=["juansebastianescobar.vega@gmail.com","dianamarcelamolinamera@gmail.com","asesoriastabares@hotmail.com "]
+  let isMatch = false;
+  if (userEmail && targetEmailAddresses.includes(userEmail)) {
+    isMatch = true;}
+ console.log(user?.emailAddresses[0].emailAddress)
   useEffect(() => {
     fetch('/api/contact',{ next:{revalidate:300}})
       .then((res) => res.json())
@@ -19,13 +25,14 @@ export default function Admin(users) {
         setLoading(false)
       })
   }, [])
+
  
   if (isLoading) return <p>Loading...</p>
   if (!data ) return (<div style={{minHeight:"66vh"}}><p>No profile data</p></div>)
  
   // In case the user signs out while on the page.
-  if (!isLoaded || !userId) {
-    return null;
+  if (!isLoaded || !isMatch) {
+    return (<div style={{minHeight:"66vh"}}><p>No tienes permisos suficientes solicita acceso a tu administrador</p></div>)
   }
 
   
