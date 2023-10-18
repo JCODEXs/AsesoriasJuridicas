@@ -53,14 +53,14 @@ function FooterSimple() {
               </Link>
             </p>
           </div>
-          <div>
+          {/* <div>
             <p style={linkStyle}>
               <Link href="https://www.triptyclondon.com/faq" target="_self">
                 T&Cs
               </Link>
             </p>
-          </div>
-          <div>
+          </div> */}
+          {/* <div>
             <p style={linkStyle}>
               <Link
                 href="https://www.triptyclondon.com/store-policy"
@@ -70,7 +70,7 @@ function FooterSimple() {
                 Metodos De pago
               </Link>
             </p>
-          </div>
+          </div> */}
           <div>
             <p style={linkStyle}>
               <Link
@@ -82,16 +82,16 @@ function FooterSimple() {
               </Link>
             </p>
           </div>
-          <div>
+          {/* <div>
             <p style={linkStyle}>
               <Link
-                href="https://www.triptyclondon.com/privacy-policy"
+                href=""
                 target="_self"
               >
                 Politica de Privacidad
               </Link>
             </p>
-          </div>
+          </div> */}
         </div>
 
         <ContactInfo />
@@ -112,17 +112,17 @@ function FooterSimple() {
           >
             <div style={{ zIndex: 10 }}>
               <a href="https://www.instagram.com/pensionescolombianos/?hl=en">
-                <Image height={30} width={30} src="/instagram.png" />
+                <Image height={30} width={30} src="/instagram.png" alt="insta" />
               </a>
             </div>
             <div style={{ zIndex: 10 }}>
               <a href="https://www.facebook.com/pensiones.colombianos.9">
-                <Image height={30} width={30} src="/facebook.png" />
+                <Image height={30} width={30} src="/facebook.png" alt="face" />
               </a>
             </div>
             <div style={{ zIndex: 10 }}>
               <a href="">
-                <Image height={30} width={30} src="/twitter.svg" />
+                <Image height={30} width={30} src="/twitter.svg" alt="twitter"/>
               </a>
             </div>
           </div>

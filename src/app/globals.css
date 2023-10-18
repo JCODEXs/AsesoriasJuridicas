@@ -88,7 +88,7 @@ a {
 
 button {
   font-size: 1.27rem;
-  margin:0.1rem;
+  margin:0.21rem;
   padding: 0.1rem;
   border-radius: 3px;
   box-shadow: #16abff33;
@@ -139,6 +139,8 @@ li{
 }
 
 .pdfViewer {
+ 
   height: auto;
   width: 100%;
+
 }

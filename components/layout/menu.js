@@ -5,8 +5,11 @@ import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
 import React from 'react';
 import Link from 'next/link';
-
+import LogButton from '../logout/userButton';
+import SignOut from '../logout/logOutButton';
+import { SignInButton,useAuth,SignedOut,SignedIn } from "@clerk/nextjs";
 export default function FadeMenu() {
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -37,10 +40,12 @@ export default function FadeMenu() {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
+        <MenuItem onClick={handleClose}><Link href='/'>Inicio</Link></MenuItem>
         <MenuItem onClick={handleClose}><Link href='/posts'>Sentencias</Link></MenuItem>
         <MenuItem onClick={handleClose}><Link href='/admin'>Dashboard</Link></MenuItem>
-        <MenuItem onClick={handleClose}>logout</MenuItem>
+        <MenuItem onClick={handleClose}> <Link href='/'><SignedIn> <SignOut /> </SignedIn></Link>  <Link href='/admin'><SignedOut><SignInButton afterSignInUrl='/admin' /></SignedOut></Link></MenuItem>
       </Menu>
+      {/* <LogButton/> */}
     </div>
   );
 }

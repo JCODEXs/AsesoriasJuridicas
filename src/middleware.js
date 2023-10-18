@@ -3,9 +3,11 @@ import { NextResponse } from 'next/server';
 
 export default authMiddleware({
   async afterAuth(auth, req, evt) {
+    console.log(req.nextUrl.query)
     if (req.nextUrl.pathname === '/admin' && !auth.userId) {
-      return redirectToSignIn({ returnTo: req.url });
+      return redirectToSignIn({ returnTo: "/admin" });
     }
+   
   }
 });
 

@@ -44,7 +44,7 @@ const CustomAnimationComponent = ({ title, text1, text2, buttonText }) => {
         </scroll-show>
         <scroll-show>
           <p className="text-3xl text-gray4 max-w-3xl">
-            {text1} <img-reveal src="/img/build.gif" /> <span className="text-green-500 font-display animate-pulse">{text2}</span>
+            {text1} <img-reveal src="/img/build.gif"  alt="guif"/> <span className="text-green-500 font-display animate-pulse">{text2}</span>
           </p>
           <a className="animate-bounce mb-[200px] text-2xl no-underline block" href="#fun">
             {buttonText}

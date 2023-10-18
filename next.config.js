@@ -2,7 +2,6 @@ const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   reactStrictMode: true,
-  experimental: { appDir: true },
   webpack: (config, { isServer }) => {
 //     if (isServer) {
 //       config.externals = [

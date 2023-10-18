@@ -100,7 +100,7 @@ const PDFViewer = (props) => {
         </button>
          
       </div>
-      <div style={{ width: '100%', height: 'auto',overflow:'scroll' }}>
+      <div style={{ display:"flex",justifyContent:"center", width: '100%', height: 'auto',overflow:'scroll', minHeight:"78vh" }}>
 
           {pdfBlob && (
             

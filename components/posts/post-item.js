@@ -4,9 +4,10 @@ import Image from 'next/image';
 import classes from './post-item.module.css';
 
 function PostItem(props) {
-  const { title, image, excerpt, date, slug } = props.post;
+  const { title, image, excerpt, date, slug,content,name } = props.post;
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = new Date(date).toLocaleDateString('es-US', options);
+  console.log(props)
 
   const imagePath = `/images/posts/68944/${image}`;
   const linkPath = `/posts/${slug}`;
@@ -26,6 +27,8 @@ function PostItem(props) {
           </div>
           <div className={classes.content}>
             <h3>{title}</h3>
+            <h2>{name}</h2>
+            <p>{content}</p>
             {/* <time>{formattedDate}</time>
             <p>{excerpt}</p> */}
           </div>
