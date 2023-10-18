@@ -12,7 +12,7 @@ export default function Admin(users) {
   const [isLoading, setLoading] = useState(true)
  
   useEffect(() => {
-    fetch('/api/contact')
+    fetch('/api/contact',{ next:{revalidate:300}})
       .then((res) => res.json())
       .then((data) => {
         setData(data)

@@ -96,7 +96,7 @@ function FooterSimple() {
 
         <ContactInfo />
       </div>
-
+      卷
       <div>
         <ul aria-label="Social Bar">
           <div

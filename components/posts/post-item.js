@@ -4,7 +4,7 @@ import Image from 'next/image';
 import classes from './post-item.module.css';
 
 function PostItem(props) {
-  const { title, image, excerpt, date, slug,content,name } = props.post;
+  const { title, image, excerpt, date, slug,content,name,type } = props.post;
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = new Date(date).toLocaleDateString('es-US', options);
   console.log(props)
@@ -17,6 +17,7 @@ function PostItem(props) {
       <Link href={linkPath}>
       
           <div className={classes.image}>
+            <p>{type}</p>
             <Image
               src={imagePath}
               alt={title}
