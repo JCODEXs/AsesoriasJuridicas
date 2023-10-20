@@ -1,6 +1,7 @@
 .logo { 
   display: flex;
-   margin: 1rem;
+   margin: 0.5rem;
+   padding-top: 0.87rem;
     text-transform: uppercase;
     font-size: var(--size-5);
     /* font-weight: bold; */
@@ -16,7 +17,7 @@
     }
   }
   .image{
-    margin-top:0.1rem;
-    height: 150;
-    width: 150;
+    margin-top:0.4rem;
+    height: 130;
+    width: 130;
   }

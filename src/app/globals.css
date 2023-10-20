@@ -76,10 +76,12 @@
 * {
   box-sizing: border-box;
   padding: 0;
-  margin: 0;
+  /* margin: 0; */
 }
 
-
+body {
+  margin: 0.41rem;
+}
 
 a {
   color: inherit;
@@ -94,7 +96,7 @@ button {
   box-shadow: #16abff33;
 }
 section {
-  margin-bottom: 8rem;
+  margin-bottom: 5rem;
 }
 
 .footer {

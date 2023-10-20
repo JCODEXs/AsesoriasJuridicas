@@ -1,14 +1,15 @@
 .grid {
-  background:linear-gradient(to bottom,#233D8C,#030A8C);
+  background: linear-gradient(to bottom,#DFE0E0,#d8e7e7, #2f468c, #233D8C,#DFE0E0);
+
   list-style: none;
   margin: .21rem;
-  padding: 0.1rem;
+  padding: 0.41rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(14rem, 4fr));
   gap: 1.5rem;
   align-content: center;
   justify-content: center;
-  width: 95%;
-  padding-bottom: 1.5rem;
+  width: 100%;
+  padding-bottom: 1.1rem;
   border: bottom radius 5px; ;
 }

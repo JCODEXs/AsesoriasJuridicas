@@ -4,6 +4,7 @@ import Head from 'next/head';
 import FeaturedPosts from '../../components/homePage/featuredPost';
 import Hero from '../../components/homePage/hero';
 import { getFeaturedPosts } from '../../lib/posts-util';
+import ContactForm from '../../components/contact/contact-form';
 
 function HomePage(props) {
   const featuredPosts = getFeaturedPosts();
@@ -19,6 +20,7 @@ function HomePage(props) {
       </Head>
       <Hero />
       <FeaturedPosts posts={featuredPosts} />
+      <ContactForm/>
     </Fragment>
   );
 }

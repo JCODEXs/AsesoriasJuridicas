@@ -75,17 +75,17 @@ const PDFViewer = (props) => {
 
       <div className="pagination">
         <div style={{display:'flex',justifyContent:"space-evenly", fontSize: "1.4rem",
-  margin:"0.3rem",
-  padding:" 0.2rem"}}>
+  margin:"0.15rem",
+  padding:" 0.1rem"}}>
         <div>
           <button onClick={handleZoomIn}>+🔍</button>
           <button onClick={handleZoomOut}>-🔍</button>
         </div>
         <button onClick={downloadPDF}>📥</button>
       </div>
-        <p>
+        
           Pagina {pageNumber} de {numPages}
-        </p>
+       
         <button
           onClick={() => setPageNumber(Math.max(1, pageNumber - 1))}
           disabled={pageNumber <= 1}
