@@ -5,25 +5,23 @@ const ContactInfo = () => {
     <div className={classes.contactInfo}>
     <ul>
         <li >
-            <i className={classes.icon}></i>
-            <span>📧asesoriastabares@hotmail.com</span>
+            <i className={classes.icon}>📧</i>
+            <span> asesoriastabares@hotmail.com</span>
         </li>
         <li>
             <i className={classes.icon}>📞</i>
-            <span> (+57) 3167591399</span>
-            <br>
-                </br>
-            <i className={classes.icon}>📞</i>
-            <span> (+1) 954-534-4388</span>
-        </li>
+            <div> (+57) 316 759 13 99</div>
+          </li>
+          <li>
+          <i className={classes.icon}>📞</i>
+            <div> (+1) 954 534 43 88</div>
+          </li>
         <li>
             <i className={classes.icon}>🏢</i>
-            <span>
+            <div>
             Edificio Plaza de Cayzedo  
-                <br>
-                </br>
-              Cali, Carrera 4 No. 10-44 Of. 718
-            </span>
+            Cali, Carrera 4 No. 10-44 Of. 718
+            </div>
         </li>
     </ul>
 </div>

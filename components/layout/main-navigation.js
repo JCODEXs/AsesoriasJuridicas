@@ -14,9 +14,9 @@ function MainNavigation() {
       </Link>
       <nav>
         <ul>
-          <li>
+          {/* <li>
           <Link href='/contact'>Contacto</Link>
-          </li>
+          </li> */}
           <li>
           <FadeMenu/>  {/* <Link href='/contact'>Contacto</Link> */}
           </li>

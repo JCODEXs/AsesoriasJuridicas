@@ -27,6 +27,7 @@ export default function FadeMenu() {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
+        style={{fontSize:"1.8rem"}}
       >
         三
       </Button>
@@ -41,6 +42,7 @@ export default function FadeMenu() {
         TransitionComponent={Fade}
       >
         <MenuItem onClick={handleClose}><Link href='/'>Inicio</Link></MenuItem>
+        <MenuItem onClick={handleClose}> <Link href='/contact'>Contacto</Link></MenuItem>
         <MenuItem onClick={handleClose}><Link href='/posts'>Sentencias</Link></MenuItem>
         <MenuItem onClick={handleClose}><Link href='/admin'>Dashboard</Link></MenuItem>
         <MenuItem onClick={handleClose}> <Link href='/'><SignedIn> <SignOut /> </SignedIn></Link>  <Link href='/admin'><SignedOut><SignInButton afterSignInUrl='/admin' /></SignedOut></Link></MenuItem>

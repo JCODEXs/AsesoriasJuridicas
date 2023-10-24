@@ -1,9 +1,8 @@
 .grid {
-  background: linear-gradient(to bottom,#DFE0E0,#d8e7e7, #2f468c, #233D8C,#DFE0E0);
-
+  background: linear-gradient(to bottom,#DFE0E0,#3E5A7F,#DFE0E0);
   list-style: none;
   margin: .21rem;
-  padding: 0.41rem;
+  padding: 0.21rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(14rem, 4fr));
   gap: 1.5rem;

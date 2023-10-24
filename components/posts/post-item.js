@@ -17,7 +17,7 @@ function PostItem(props) {
       <Link href={linkPath}>
       
           <div className={classes.image}>
-            <p>{type}</p>
+            <div style={{ fontSize:"1.5rem",fontWeight:600,margin:"0.5rem" }} >{type}</div>
             <Image
               src={imagePath}
               alt={title}
@@ -27,8 +27,8 @@ function PostItem(props) {
             />
           </div>
           <div className={classes.content}>
-            <h3>{title}</h3>
-            <h2>{name}</h2>
+            <div style={{ fontSize:"1.5rem",fontWeight:600,margin:"0.5rem" }}>{title}</div>
+            <div style={{ fontSize:"1.5rem",fontWeight:400, }}>{name}</div>
             <p>{content}</p>
             {/* <time>{formattedDate}</time>
             <p>{excerpt}</p> */}

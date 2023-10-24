@@ -6,11 +6,11 @@
     align-items: "space-evenly";
     justify-content: space-evenly;
     font-family: Arial, sans-serif;
-    background: rgba(242, 188, 27, 0.7);
+    background: #3e5a7fb5;
     border-radius: 5px;
     /* border: 2px solid rgb(179, 57, 57); */
-    margin: 0.21rem;
-    font-size: 1.1rem;
+    margin: 0.31rem;
+    font-size: 1rem;
    
 }
 
@@ -22,7 +22,7 @@
 
 /* Style each list item */
 .contactInfo li {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
 }

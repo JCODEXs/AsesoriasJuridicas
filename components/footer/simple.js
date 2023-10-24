@@ -33,7 +33,7 @@ function FooterSimple() {
       <div
         style={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: "column",
           justifyContent: "space-around",
         }}
       >
@@ -46,13 +46,13 @@ function FooterSimple() {
             margin: "1rem",
           }}
         >
-          <div>
+          {/* <div>
             <p style={linkStyle}>
               <Link href="/contact" target="undefined">
                 Contacto
               </Link>
             </p>
-          </div>
+          </div> */}
           {/* <div>
             <p style={linkStyle}>
               <Link href="https://www.triptyclondon.com/faq" target="_self">
@@ -71,7 +71,7 @@ function FooterSimple() {
               </Link>
             </p>
           </div> */}
-          <div>
+          {/* <div>
             <p style={linkStyle}>
               <Link
                 href="/posts"
@@ -81,7 +81,7 @@ function FooterSimple() {
                 Sentencias
               </Link>
             </p>
-          </div>
+          </div> */}
           {/* <div>
             <p style={linkStyle}>
               <Link
@@ -97,6 +97,10 @@ function FooterSimple() {
         <ContactInfo />
       </div>
       卷
+        
+    <div class="text-xs">
+        Copyright ©  2023 Metta Flow 
+    </div>
       <div>
         <ul aria-label="Social Bar">
           <div
@@ -117,7 +121,7 @@ function FooterSimple() {
             </div>
             <div style={{ zIndex: 10 }}>
               <a href="https://www.facebook.com/pensiones.colombianos.9">
-                <Image height={30} width={30} src="/facebook.png" alt="face" />
+                <Image height={24} width={24} src="/facebook.png" alt="face" />
               </a>
             </div>
             <div style={{ zIndex: 10 }}>

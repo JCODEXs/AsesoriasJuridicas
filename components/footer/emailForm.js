@@ -41,7 +41,7 @@ function EmailForm() {
   }, [requestStatus]);
   return (
     <div>
-      <form onSubmit={handleSubmit} style={{margin:"0.1rem"}}>
+      <form onSubmit={handleSubmit} style={{margin:"0.3rem"}}>
         <input
           className="InputField"
           type="email"

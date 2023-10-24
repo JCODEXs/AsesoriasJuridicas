@@ -5,10 +5,10 @@ function Logo() {
   return <div className={classes.logo}>
 
         <Image
-          src='/images/site/icono.png'
+          src='/images/site/icono2.png'
           alt='Pensiones Colombianos'
-          width={90}
-          height={90}
+          width={107}
+          height={95}
         /> 
      
   </div>;

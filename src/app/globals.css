@@ -18,7 +18,7 @@
     transparent 360deg
   );
   --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
+    #FEFEFE,
     rgba(255, 255, 255, 0)
   );
 
@@ -93,15 +93,16 @@ button {
   margin:0.21rem;
   padding: 0.1rem;
   border-radius: 3px;
-  box-shadow: #16abff33;
+  box-shadow: 1px 2px 2px #2ca0e433;
+  border:1px solid #34abf033
 }
 section {
   margin-bottom: 5rem;
 }
 
 .footer {
-    background-image: url("/images/site/background.png");
-  height: 230px;
+    background-image: url("/images/site/tablafondo.jpg");
+  height: 330px;
   background-color: #f9f9f9;
   border-top: 1px solid #e1e1e1;
   text-align: center;
