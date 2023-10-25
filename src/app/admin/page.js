@@ -16,7 +16,7 @@ export default function Admin(users) {
   let isMatch = false;
   if (userEmail && targetEmailAddresses.includes(userEmail)) {
     isMatch = true;}
- console.log(user?.emailAddresses[0].emailAddress)
+ console.log(data)
   useEffect(() => {
     fetch('/api/contact',{ next:{revalidate:300}})
       .then((res) => res.json())
@@ -32,13 +32,13 @@ export default function Admin(users) {
  
   // In case the user signs out while on the page.
   if (!isLoaded || !isMatch) {
-    return (<div style={{minHeight:"66vh"}}><p>No tienes permisos suficientes solicita acceso a tu administrador</p></div>)
+    return (<div style={{minHeight:"66vh"}}><p>Bienvenido{user.username?user.username:user.id} !Gracias por hacer parte de nuestra comunidad!!  </p></div>)
   }
 
   
   return (
     <div style={{minHeight:"66vh", marginTop:"1rem"}}>
-     <UserList users={data}/>
+     <UserList contacts={data}/>
     </div>
   );
 }

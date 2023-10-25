@@ -3,8 +3,9 @@
 /* Style the contact info container */
 .contactInfo {
     display: flex;
-    align-items: "space-evenly";
-    justify-content: space-evenly;
+   align-items: center;
+   justify-content: center;
+   width: fit-content;
     font-family: Arial, sans-serif;
     background: #3e5a7fb5;
     border-radius: 5px;

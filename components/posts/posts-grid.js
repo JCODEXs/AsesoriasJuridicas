@@ -6,7 +6,7 @@ function PostsGrid(props) {
 
   return (
     <ul className={classes.grid}>
-        <div style={{display:"flex",justifyContent:"center", fontSize:"1.5rem"}}>Sentencias destacadas</div>
+        
       {posts?.map((post) => (
         <PostItem key={post.slug} post={post} />
       ))}

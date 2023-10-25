@@ -34,33 +34,33 @@ function FooterSimple() {
         style={{
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-around",
+          alignItems: "center",
         }}
       >
-        <div
+        {/* <div
           style={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-start",
+            justifyContent: "center",
             fontSize: "0.7rem",
             margin: "1rem",
           }}
         >
-          {/* <div>
+          <div>
             <p style={linkStyle}>
               <Link href="/contact" target="undefined">
                 Contacto
               </Link>
             </p>
-          </div> */}
-          {/* <div>
+          </div>
+          <div>
             <p style={linkStyle}>
               <Link href="https://www.triptyclondon.com/faq" target="_self">
                 T&Cs
               </Link>
             </p>
-          </div> */}
-          {/* <div>
+          </div>
+          <div>
             <p style={linkStyle}>
               <Link
                 href="https://www.triptyclondon.com/store-policy"
@@ -70,8 +70,8 @@ function FooterSimple() {
                 Metodos De pago
               </Link>
             </p>
-          </div> */}
-          {/* <div>
+          </div>
+          <div>
             <p style={linkStyle}>
               <Link
                 href="/posts"
@@ -81,8 +81,8 @@ function FooterSimple() {
                 Sentencias
               </Link>
             </p>
-          </div> */}
-          {/* <div>
+          </div>
+          <div>
             <p style={linkStyle}>
               <Link
                 href=""
@@ -91,9 +91,8 @@ function FooterSimple() {
                 Politica de Privacidad
               </Link>
             </p>
-          </div> */}
-        </div>
-
+          </div>
+        </div> */}
         <ContactInfo />
       </div>
       卷

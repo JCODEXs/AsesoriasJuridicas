@@ -27,7 +27,7 @@ export default function FadeMenu() {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        style={{fontSize:"1.8rem"}}
+        style={{fontSize:"1.8rem",color:"#395873"}}
       >
         三
       </Button>

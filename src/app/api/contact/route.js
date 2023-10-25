@@ -1,20 +1,24 @@
+import { ObjectId } from "mongodb";
 import { connectToDatabase} from "../../../../lib/mongoDb";
 import { NextResponse } from 'next/server';
+let cached;
+
 export async function POST(req, res) {
-    const  data  = await req.json();
-    const jsonData = JSON.stringify(data)
+  try {
+    const data = await req.json();
+    const jsonData = JSON.stringify(data);
     
-    const  cached  = await connectToDatabase();
-  const db=cached.conn.db
-//   console.log(db)
-  try{
-  const result = await db.collection('Contactos').insertOne(data);
-//   console.log(result);
-  return NextResponse.json({ data: jsonData }, { status: 200 });
-} catch(err) {
-    console.log(err)
-return NextResponse.json({ message:"error ocurred" }, { status: 400 });
-}}
+    const cached = await connectToDatabase();
+    const db = cached.conn.db;
+  
+    const result = await db.collection('Contactos').insertOne(data);
+  
+    return NextResponse.json({ data: jsonData }, { status: 200 });
+  } catch (err) {
+    console.log(err);
+    return NextResponse.json({ message: "error occurred" }, { status: 400 });
+  }
+}
 
 export async function GET(req, res) {
   try {
@@ -32,22 +36,22 @@ export async function GET(req, res) {
 }
 
 export async function DELETE(req, res) {
-  const data = await req.json();
-  const jsonData = JSON.stringify(data);
-  
-  const cached = await connectToDatabase();
-  const db = cached.conn.db;
-
   try {
+    const data = await req.json();
+    const jsonData = JSON.stringify(data);
+    
+    const cached = await connectToDatabase();
+    const db = cached.conn.db;
+
     if (data.name) {
-      const result = await db.collection('Contactos').deleteOne({ _id: ObjectId(data.id) });
+      const result = await db.collection('Contactos').deleteOne({ _id: new ObjectId(data._id) });
       if (result.deletedCount === 1) {
         return NextResponse.json({ message: "Successfully deleted the record from Contactos" }, { status: 200 });
       } else {
         return NextResponse.json({ message: "No record found for deletion in Contactos" }, { status: 404 });
       }
     } else {
-      const result = await db.collection('Email').deleteOne({ _id: ObjectId(data.id) });
+      const result = await db.collection('Email').deleteOne({ _id: new ObjectId(data._id) });
       if (result.deletedCount === 1) {
         return NextResponse.json({ message: "Successfully deleted the record from Email" }, { status: 200 });
       } else {
@@ -57,5 +61,9 @@ export async function DELETE(req, res) {
   } catch (err) {
     console.log(err);
     return NextResponse.json({ message: "error occurred" }, { status: 400 });
+  } finally {
+    if (cached && cached.conn) {
+      await cached.conn.close();
+    }
   }
 }

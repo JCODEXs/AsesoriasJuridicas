@@ -12,7 +12,7 @@ const PDFViewer = (props) => {
   const pdfPath = `/pdf/${post.slug}.pdf`;
   const [pdfBlob, setPdfBlob] = useState(null);
   const [url,setUrl]=useState();
-  const [scale, setScale] = useState(1)
+  const [scale, setScale] = useState(0.7)
 
   useEffect(() => {
     console.log("hi")
