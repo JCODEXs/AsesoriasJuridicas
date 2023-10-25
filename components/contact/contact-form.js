@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 import styles from './contact-form.module.css';
-import Notification from '../ui/notification';
+import Notification from '../notifications/notification';
 import Image from 'next/image';
 
 async function sendContactData(contactDetails) {

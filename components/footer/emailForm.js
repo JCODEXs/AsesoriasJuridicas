@@ -4,7 +4,19 @@ import Notification from "../../components/notifications/notification"
 function EmailForm() {
   const [requestStatus, setRequestStatus] = useState(); // 'pending', 'success', 'error'
   const [email, setEmail] = useState('');
+  const [error, setError] = useState('Email invalido');
+  const [emailValid, setEmailValid] = useState(false);
 
+  const checkEmail = (input) => {
+    setEmail(input);
+    if (validateEmail(input)) {
+      setEmailValid(true);
+    } else {
+      console.log("Invalid email");
+      setEmailValid(false);
+    }
+  };
+  
   async function sendContactData(contactDetails) {
     const response = await fetch('/api/email', {
       method: 'POST',
@@ -14,9 +26,18 @@ function EmailForm() {
       },
     })
   }
+  const validateEmail = (email) => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!emailValid) {
+      setRequestStatus('error');
+      return;
+    }
     setRequestStatus('pending');
    try{
      sendContactData(email)
@@ -25,6 +46,7 @@ function EmailForm() {
        }catch(er){
         console.log(er)
          setRequestStatus('error');
+         setError(er)
        } 
     console.log('Email submitted:', email);
   };
@@ -47,7 +69,7 @@ function EmailForm() {
           type="email"
           placeholder="Ingresa tu correo"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => checkEmail(e.target.value)}
           required
         />
         <button className="SubmitButton" type="submit">
@@ -57,6 +79,7 @@ function EmailForm() {
       {requestStatus && (
         <Notification
           status={requestStatus}
+          requestError={error}
       
         />
       )}

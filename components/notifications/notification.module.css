@@ -1,6 +1,6 @@
 .notification {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     color: var(--color-grey-100);
     background-color: var(--color-grey-800);
@@ -26,12 +26,12 @@
   }
   
   .success {
-    background-color: var(--color-success-500);
+    background-color: mediumseagreen;
     color: var(--color-grey-800);
   }
   
   .error {
-    background-color: var(--color-error-500);
+    background-color: rgba(183, 51, 51, 0.768);
   }
   
   @media (min-width: 768px) {

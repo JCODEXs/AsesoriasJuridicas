@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './notification.module.css';
 
 function Notification(props) {
-  const { status} = props;
+  const { status,requestError}  = props;
   let notification;
 
   if (status === 'pending') {
@@ -40,8 +40,8 @@ function Notification(props) {
 
   return (
     <div className={`${styles.notification} ${statusClass}`}>
-      <h2>{notification.title}</h2>
-      <p>{notification.message}</p>
+      <div>{notification.title}</div>
+      <div>{notification.message}</div>
     </div>
   );
 }
