@@ -31,7 +31,7 @@ export default function Admin(users) {
   if (!data ) return (<div style={{minHeight:"66vh"}}><p>No profile data</p></div>)
  
   // In case the user signs out while on the page.
-  if (!isLoaded || !isMatch) {
+  if (!isLoaded &&user  || user && !isMatch) {
     return (<div style={{minHeight:"66vh"}}><p>Bienvenido{user.username?user.username:user.id} !Gracias por hacer parte de nuestra comunidad!!  </p></div>)
   }
 

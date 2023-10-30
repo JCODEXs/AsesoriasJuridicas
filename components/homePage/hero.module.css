@@ -12,7 +12,7 @@
   
   .image {
     /* width: 340px; */
-    min-height: 420px;
+    min-height: 380px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
     /* border-radius: 5%; */
     overflow: hidden;
@@ -24,6 +24,7 @@
   .reactive {
     width: 100%; /* Make the video width 100% of its container */
     max-height: 110vh; /* Limit the video height to 100% of the viewport height */
+    margin-bottom: 0.42rem;
   }
   
   .image img {
