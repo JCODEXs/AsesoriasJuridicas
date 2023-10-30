@@ -22,8 +22,8 @@ const Services = () => {
         <Image
           src="/images/site/vejez.jpg"
           alt="Imagen 1"
-          width={200}
-          height={120}
+          width={250}
+          height={170}
         />
         <p style={{ margin: "5px" }}>
           Obtenga la seguridad financiera que merece en sus años dorados con
@@ -42,8 +42,8 @@ const Services = () => {
         <Image
           src="/images/site/balance.jpg"
           alt="Imagen 2"
-          width={200}
-          height={120}
+          width={250}
+          height={170}
         />
         <p style={{ margin: "5px" }}>
           Brindamos apoyo integral a aquellos que enfrentan desafíos de salud
@@ -63,8 +63,8 @@ const Services = () => {
         <Image
           src="/images/site/advisor1.jpg"
           alt="Imagen 3"
-          width={200}
-          height={120}
+          width={250}
+          height={170}
         />
         <p style={{ margin: "5px" }}>
           En momentos difíciles, le ofrecemos apoyo para asegurar su estabilidad
@@ -84,8 +84,8 @@ const Services = () => {
         <Image
           src="/images/site/signing.jpg"
           alt="Imagen 4"
-          width={200}
-          height={120}
+          width={250}
+          height={170}
         />
         <p style={{ margin: "5px" }}>
           "Nuestro equipo legal está listo para defender sus derechos y
