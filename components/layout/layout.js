@@ -18,7 +18,7 @@ function Layout(props) {
     }}
         width="50px"
         aria-label="Chat on WhatsApp"
-        href="https://wa.me/573002536997"
+        href="https://wa.me/573167591399"
       >
         {" "}
         <Image
