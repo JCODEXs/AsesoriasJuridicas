@@ -126,32 +126,32 @@ const Services = () => {
             alignContent: "space-evenly",
           }}>
           {" "}
+          Tenemos la experiencia para garantizar el éxito en demandas por
+          pensión de vejez, invalidez, sobreviviente, tutelas y recursos de
+          casación ante la Corte Suprema de Justicia, Sala Laboral.
+        </div>
+       
           <Image
           src="/images/site/balance.jpg"
           alt="Imagen 2"
           width={250}
-          height={250}
+          height={170}
         />
+         
  <div style={{
             display: "block",
             alignItems: "center",
-            margin: "0.5rem",
+            marginBottom: "0.3rem",
             fontSize: "1.1rem",
             justifyContent: "center",
             alignContent: "center",
           }}>
-          Tenemos la experiencia para garantizar el éxito en demandas por
-          pensión de vejez, invalidez, sobreviviente, tutelas y recursos de
-          casación ante la Corte Suprema de Justicia, Sala Laboral.
           <p> {" "}
           Para ello, contamos con un equipo de alta calidad humana, comprometido
           con cada gestión que se realice para obtener la pensión a la que tiene
           derecho o la indemnización de perjuicios para los pensionados o
           afiliados que fueron trasladados por engaño de los fondos privados de
           pensión. </p>
-        </div>
-       
-         
         </div>
       </div>
     </div>

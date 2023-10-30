@@ -100,7 +100,8 @@ function Hero() {
           muted={isMuted}
           loop
           width={350} // Set the width of the video
-          height={280} // Set the height of the video
+          height={480} // Set the height of the video
+          style={{ objectFit: 'cover', width: '90%', maxWidth: '1000px',maxHeight:"300px" }}
         >
           <source
             src="./images/site/Pensiones_Colombianos._720p.mp4"
