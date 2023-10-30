@@ -88,7 +88,7 @@ const Services = () => {
           height={170}
         />
         <p style={{ margin: "5px" }}>
-          "Nuestro equipo legal está listo para defender sus derechos y
+          Nuestro equipo legal está listo para defender sus derechos y
           garantizar un proceso legal justo y transparente. Con nuestra
           experiencia en tutelas, abogamos por sus intereses y luchamos por su
           acceso equitativo a los beneficios y recursos adecuados.
