@@ -25,6 +25,7 @@ async function sendContactData(contactDetails) {
 function ContactForm() {
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredName, setEnteredName] = useState('');
+  const [phone, setPhone] = useState('');
   const [enteredMessage, setEnteredMessage] = useState('');
   const [requestStatus, setRequestStatus] = useState(); // 'pending', 'success', 'error'
   const [requestError, setRequestError] = useState();
@@ -49,11 +50,13 @@ function ContactForm() {
         email: enteredEmail,
         name: enteredName,
         message: enteredMessage,
+        phone:phone,
       });
       setRequestStatus('success');
       setEnteredMessage('');
       setEnteredEmail('');
       setEnteredName('');
+      setPhone("")
     } catch (error) {
       setRequestError(error.message);
       setRequestStatus('error');
@@ -112,6 +115,17 @@ function ContactForm() {
                 required
                 value={enteredName}
                 onChange={(event) => setEnteredName(event.target.value)}
+              />
+            </div>
+            <div className={styles.control}>
+              <label htmlFor='phone'>Telefono</label>
+              <input
+               style={{border: "1px solid #0D0D0D"}}
+                type='number'
+                id='phone'
+                required
+                value={phone}
+                onChange={(event) => setPhone(event.target.value)}
               />
             </div>
           </div>

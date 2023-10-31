@@ -1,7 +1,12 @@
 import { ObjectId } from "mongodb";
 import { connectToDatabase} from "../../../../lib/mongoDb";
 import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
+import  {EmailTemplate} from "../../../../components/contact/emailTemplate"
 let cached;
+const resend = new Resend(process.env.MY_SECRET_KEY);
+
+
 
 export async function POST(req, res) {
   try {
@@ -12,7 +17,13 @@ export async function POST(req, res) {
     const db = cached.conn.db;
   
     const result = await db.collection('Contactos').insertOne(data);
-  
+    const email = await resend.emails.send({
+      from: 'PensionesColombianos <onboarding@resend.dev>',
+      to: ['asesoriastabares@hotmail.com',"juansebastianescobar.vega@gmail.com"],
+      subject: 'Nuevo Cliente',
+      react: EmailTemplate({contact:data}),
+    });
+    console.log(email)
     return NextResponse.json({ data: jsonData }, { status: 200 });
   } catch (err) {
     console.log(err);

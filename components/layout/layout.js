@@ -16,6 +16,8 @@ function Layout(props) {
       right: '1.7rem',
       zIndex: 100
     }}
+     target="_blank"
+     rel="noopener noreferrer"
         width="50px"
         aria-label="Chat on WhatsApp"
         href="https://wa.me/573167591399"

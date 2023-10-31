@@ -114,17 +114,17 @@ function FooterSimple() {
             }}
           >
             <div style={{ zIndex: 10 }}>
-              <a href="https://www.instagram.com/pensionescolombianos/?hl=en">
+              <a href="https://www.instagram.com/pensionescolombianos/?hl=en" target="_blank" rel="noopener noreferrer" >
                 <Image height={30} width={30} src="/instagram.png" alt="insta" />
               </a>
             </div>
             <div style={{ zIndex: 10 }}>
-              <a href="https://www.facebook.com/pensiones.colombianos.9">
+              <a href="https://www.facebook.com/pensiones.colombianos.9" target="_blank" rel="noopener noreferrer">
                 <Image height={24} width={24} src="/facebook.png" alt="face" />
               </a>
             </div>
             <div style={{ zIndex: 10 }}>
-              <a href="">
+              <a href="" target="_blank" rel="noopener noreferrer">
                 <Image height={30} width={30} src="/twitter.svg" alt="twitter"/>
               </a>
             </div>
