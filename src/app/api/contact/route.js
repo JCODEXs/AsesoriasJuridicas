@@ -4,11 +4,11 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import  {EmailTemplate} from "../../../../components/contact/emailTemplate"
 let cached;
-const resend = new Resend(process.env.MY_SECRET_KEY);
 
 
 
 export async function POST(req, res) {
+  const resend = new Resend(process.env.MY_SECRET_KEY);
   try {
     const data = await req.json();
     const jsonData = JSON.stringify(data);
