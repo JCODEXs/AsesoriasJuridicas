@@ -19,7 +19,7 @@ export async function POST(req, res) {
     const result = await db.collection('Contactos').insertOne(data);
     const email = await resend.emails.send({
       from: 'PensionesColombianos <onboarding@resend.dev>',
-      to: ['asesoriastabares@hotmail.com',"juansebastianescobar.vega@gmail.com"],
+      to: "juansebastianescobar.vega@gmail.com",
       subject: 'Nuevo Cliente',
       react: EmailTemplate({contact:data}),
     });
