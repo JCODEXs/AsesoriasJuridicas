@@ -2,7 +2,9 @@
   width: 98%;
   /* max-width: 60rem; */
   margin:0.3rem;
-  padding:0.1rem
+  padding:0.1rem;
+  position: relative;
+  z-index: -2;
 }
 
 .posts h1 {
