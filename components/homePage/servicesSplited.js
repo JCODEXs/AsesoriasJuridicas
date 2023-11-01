@@ -101,7 +101,7 @@ const Services = () => {
           alignItems: "center",
           marginBottom: "0.6rem",
           margin: "1.3rem",
-          fontFamily: "palo seco",
+          // fontFamily: "palo seco",
         }}
       >
         <div

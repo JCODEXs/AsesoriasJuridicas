@@ -71,21 +71,15 @@ function Hero() {
           </div>
           {isMuted ? (
             <button onClick={handlePlay}>
-              <Image
-                src="/images/site/muted.png"
-                alt="Pensiones Colombianos"
-                width={25}
-                height={23}
-              />
+            <span class="material-symbols-outlined">
+volume_off
+</span>
             </button>
           ) : (
             <button onClick={handlePlay}>
-              <Image
-                src="/images/site/sound4.png"
-                alt="Pensiones Colombianos"
-                width={25}
-                height={23}
-              />
+             <span class="material-symbols-outlined">
+volume_up
+</span>
             </button>
           )}
         </div>

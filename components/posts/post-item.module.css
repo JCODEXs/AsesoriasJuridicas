@@ -4,6 +4,8 @@
   text-align: center;
   border-radius: 5px;
   margin-top: 0.5rem;
+  position: relative;
+  z-index: -1;
 }
 
 .post a {
@@ -14,7 +16,10 @@
   width: 100%;
   max-height: 20rem;
   overflow: hidden;
-  border: top radius 5%; ;
+  border: top radius 5%; 
+  position: inherit;
+  z-index: 1;
+
 }
 
 .image img {

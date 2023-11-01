@@ -14,34 +14,38 @@ function PostItem(props) {
 
   return (
     <li className={classes.post}>
-      <Link href={linkPath}>
+      <Link  style={{position:"relative", zIndex: 1}} href={linkPath}>
       
           <div className={classes.image} >
-            <div style={{ fontSize:"1.5rem",fontWeight:600,margin:"0.5rem" }} >{type}</div>
-            <div style={{position:"relative"}}>
-              <Image
-                src={imagePath}
-                alt={title}
-                width={120}
-                height={150}
-                layout='responsive'
-              />
-               <div style={{
-                  position:"absolute",
-                  top:"17%",
-                  left:"16%",
-                  transform:"translate(-50%, -50%) rotate(-25deg)",
-                  color:"rgba(255, 255, 255, 0.7)",
-                  background:"rgba(165, 0, 10, 0.75)",
-                  padding:"0.25rem",
-                  fontSize:"1.5rem",
-                  paddingLeft: "1.1rem", // Agregado de relleno izquierdo
-                  paddingRight: "0.8rem",
-                  borderRadius:"5px"
-                }}>
-                  PDF
-                </div>
-            </div>
+            <div style={{ fontSize:"1.5rem",fontWeight:600,margin:"0.5rem",position:"relative",zIndex: -1 }} >{type}</div>
+            <div style={{position:"relative", zIndex: -1}} >
+  
+    <Image
+      src={imagePath}
+      alt={title}
+      width={120}
+      height={150}
+      layout='responsive'
+      style={{position:"relative", zIndex: -100}}
+    />
+    <div style={{
+    position:"absolute",
+    top:"17%",
+    left:"16%",
+    transform:"translate(-50%, -50%) rotate(-25deg)",
+    color:"rgba(255, 255, 255, 0.7)",
+    background:"rgba(165, 0, 10, 0.75)",
+    padding:"0.25rem",
+    fontSize:"1.5rem",
+    paddingLeft: "1.1rem", // Agregado de relleno izquierdo
+    paddingRight: "0.8rem",
+    borderRadius:"5px",
+    zIndex: -99,
+  }}>
+    PDF
+  </div>
+</div>
+
   </div>
           <div className={classes.content}>
             <div style={{ fontSize:"1.5rem",fontWeight:600,margin:"0.5rem" }}>{title}</div>

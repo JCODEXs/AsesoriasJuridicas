@@ -76,3 +76,59 @@
   font-size: 2rem;
   font-weight: bold;
 }
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: #333;
+  color: #fff;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.menu-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links.show-menu {
+  display: block;
+}
+
+.nav-item {
+  margin: 1em 0;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-icon {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-item {
+    margin: 0 1em;
+  }
+}
+.customButton {
+  /* Add your custom styles here */
+  background-color: #f1f1f1;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  text-decoration: none;
+}
