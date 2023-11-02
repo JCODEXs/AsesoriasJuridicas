@@ -6,6 +6,8 @@
   /* max-width: 80rem; */
   /* margin: var(--size-8) auto; */
   margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .latest h2 {

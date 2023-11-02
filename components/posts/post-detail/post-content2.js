@@ -74,30 +74,43 @@ const PDFViewer = (props) => {
     <div className="pdfViewer">
 
       <div className="pagination">
-        <div style={{display:'flex',justifyContent:"space-evenly", fontSize: "1.4rem",
+        <div style={{ display:"flex",justifyContent:"center"}}>
+  
+            Pagina {pageNumber} de {numPages}
+        </div>
+        <div style={{display:'flex',justifyContent:"space-between", fontSize: "1.4rem",
   margin:"0.15rem",
   padding:" 0.1rem"}}>
         <div>
-          <button onClick={handleZoomIn}>+🔍</button>
-          <button onClick={handleZoomOut}>-🔍</button>
-        </div>
-        <button onClick={downloadPDF}>📥</button>
-      </div>
-        
-          Pagina {pageNumber} de {numPages}
-       
-        <button
+          <button onClick={handleZoomIn}><span class="material-symbols-outlined">
+zoom_in
+</span></button>
+          <button onClick={handleZoomOut}><span class="material-symbols-outlined">
+zoom_out
+</span></button>
+<button
           onClick={() => setPageNumber(Math.max(1, pageNumber - 1))}
           disabled={pageNumber <= 1}
           >
-         ⬅️
+         <span class="material-symbols-outlined">
+arrow_left
+</span>
         </button>
         <button
           onClick={() => setPageNumber(Math.min(numPages, pageNumber + 1))}
           disabled={pageNumber >= numPages}
           >
-          ➡️
+         <span class="material-symbols-outlined">
+arrow_right
+</span>
         </button>
+        </div>
+        <button onClick={downloadPDF}><span class="material-symbols-outlined">
+download
+</span></button>
+      </div>
+       
+ 
          
       </div>
       <div style={{ display:"flex",justifyContent:"center", width: '100%', height: 'auto',overflow:'scroll', minHeight:"78vh" }}>
