@@ -78,7 +78,7 @@ const PDFViewer = (props) => {
   
             Pagina {pageNumber} de {numPages}
         </div>
-        <div style={{display:'flex',justifyContent:"space-between", fontSize: "1.4rem",
+        <div style={{display:'flex',justifyContent:"space-around", fontSize: "1.4rem",
   margin:"0.15rem",
   padding:" 0.1rem"}}>
         <div>
