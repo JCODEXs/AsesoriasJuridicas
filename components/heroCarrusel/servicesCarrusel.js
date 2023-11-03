@@ -57,6 +57,7 @@ const ServiceCarousel = () => {
       >
         {servicesData.map((image) => (
             <div
+            key={image.image}
             style={{
                         display:"flex",
                         justifyContent:"center",
@@ -76,7 +77,7 @@ const ServiceCarousel = () => {
             height={285}
             // className="object-contain"
             style={{maxWidth:"550px"}}
-            key={image.image}
+            
             />
             <div style={{position:"relative",display:"flex",flexDirection:"column",margin:"1rem",justifyContent:"center",maxWidth:"400px",}}>
                 <div style={{fontSize:"1.5rem"}}>{image.title} </div>
