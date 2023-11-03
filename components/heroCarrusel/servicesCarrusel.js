@@ -44,7 +44,7 @@ const ServiceCarousel = () => {
        >
 <div style={{fontSize:"1.6rem",fontWeight:500,textAlign: "center"}}>Servicios</div>
       <Carousel
-        showThumbs={false}
+        showThumbs={true}
          autoPlay
         infiniteLoop
          interval={7000}
@@ -52,7 +52,8 @@ const ServiceCarousel = () => {
         showStatus={true}
         transitionTime={1500}
         width={"95%"}
-       
+        swipeable={true}
+    
       >
         {servicesData.map((image) => (
             <div

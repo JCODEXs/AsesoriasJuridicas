@@ -90,7 +90,7 @@ function ContactForm() {
   }
 
   return (
-    <div style={{display:'flex',flexDirection:'row',flexWrap:"wrap",overflowY:"scroll",height:"100%",marginBottom:"3rem",minHeight:"70vh",alignContent: "flex-start",justifyContent: "center"}}>
+    <div style={{display:'flex',flexDirection:'row',flexWrap:"wrap",overflowY:"scroll",height:"100%",marginBottom:"3rem",minHeight:"40vh",alignContent: "flex-start",justifyContent: "center"}}>
       <section className={styles.contact}>
         <h1>¿Como podemos ayudarle?</h1>
         <form className={styles.form} onSubmit={sendMessageHandler}>
