@@ -18,7 +18,7 @@ function PostItem(props) {
       <a >
         
             <div className={classes.image} >
-              <div style={{ fontSize:"1.5rem",fontWeight:600,margin:"0.5rem",position:"relative",zIndex: -1 }} >{type}</div>
+              <div style={{display:"flex", fontSize:"1.4rem",fontWeight:500,margin:"0.5rem",position:"relative",zIndex: -1,minHeight:"3em",alignItems:"center",justifyContent:"center" }} >{type}</div>
               <div style={{position:"relative", zIndex: -1}} >
           
             <Image
@@ -49,8 +49,8 @@ function PostItem(props) {
         
           </div>
             <div className={classes.content}>
-              <div style={{ fontSize:"1.5rem",fontWeight:600,margin:"0.5rem" }}>{title}</div>
-              <div style={{ fontSize:"1.5rem",fontWeight:400, }}>{name}</div>
+              <div style={{ fontSize:"1.4rem",fontWeight:500,margin:"0.5rem" }}>{title}</div>
+              <div style={{ fontSize:"1.5rem",fontWeight:300, }}>{name}</div>
               <p>{content}</p>
               {/* <time>{formattedDate}</time>
               <p>{excerpt}</p> */}

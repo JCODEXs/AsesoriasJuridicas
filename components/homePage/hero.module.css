@@ -12,19 +12,19 @@
   
   .image {
     /* width: 340px; */
-    max-height: 580px;
+    max-height: 620px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
     /* border-radius: 5%; */
     overflow: hidden;
     background-color: var(--color-grey-700);
-    background:"rgba(242, 188, 27, 0.5)"
-    /* margin: auto; */
+    background:"rgba(242, 188, 27, 0.5)";
+    margin: auto;
     /* object-fit: cover; */
   }
   .reactive {
     width: 100%; /* Make the video width 100% of its container */
     max-height: 110vh; /* Limit the video height to 100% of the viewport height */
-    margin-bottom: 0.42rem;
+    margin: 1rem;
   }
   
   .image img {

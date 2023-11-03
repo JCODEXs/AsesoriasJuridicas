@@ -9,7 +9,28 @@ function Hero() {
   const videoRef = useRef(null);
   console.log(videoRef);
   const [isMuted, setIsMuted] = useState(true);
-
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        // Handle autoplay error (e.g., browser restrictions)
+        console.error("Autoplay error:", error);
+      });
+      setIsMuted(!isMuted);
+    }
+  };
+const soundButton=isMuted ? (
+  <button onClick={handlePlay}>
+  <span class="material-symbols-outlined">
+volume_off
+</span>
+  </button>
+) : (
+  <button onClick={handlePlay}>
+   <span class="material-symbols-outlined">
+volume_up
+</span>
+  </button>
+)
   useEffect(() => {
     const video = videoRef.current;
 
@@ -39,15 +60,6 @@ function Hero() {
       };
     }
   }, [videoRef]);
-  const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play().catch((error) => {
-        // Handle autoplay error (e.g., browser restrictions)
-        console.error("Autoplay error:", error);
-      });
-      setIsMuted(!isMuted);
-    }
-  };
   return (
     <section className={classes.hero}>
       <div
@@ -60,30 +72,19 @@ function Hero() {
         <div
           style={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: "column",
             justifyContent: "space-evenly",
-            alignItems: "flex-end",
+            alignItems: "center",
             marginBottom: "0.7rem",
           }}
         >
           <div style={{ display: "flex", fontSize: "1.7rem" }}>
             Hola soy Edgar Tabares{" "}
+            {soundButton}
           </div>
-          {isMuted ? (
-            <button onClick={handlePlay}>
-            <span class="material-symbols-outlined">
-volume_off
-</span>
-            </button>
-          ) : (
-            <button onClick={handlePlay}>
-             <span class="material-symbols-outlined">
-volume_up
-</span>
-            </button>
-          )}
+        <q style={{margin:"0.5rem",fontFamily:"Crimson Text",fontWeight:"400"}}>Soy CASACIONISTA porque llevo en la sangre justicia</q>
+    
         </div>
-        <q>Soy CASACIONISTA porque llevo en la sangre justicia</q>
       </div>
       <div className={classes.image}>
         <video
@@ -104,7 +105,9 @@ volume_up
           {/* Add additional source elements for other video formats if needed */}
           Your browser does not support the video tag.
         </video>
+     
         <EmailForm />
+       
         {/* <Image
           src='/images/site/icono.png'
           alt='Pensiones Colombianos'

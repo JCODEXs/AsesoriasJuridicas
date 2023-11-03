@@ -6,6 +6,7 @@ import Hero from '../../components/homePage/hero';
 import { getFeaturedPosts } from '../../lib/posts-util';
 import ContactForm from '../../components/contact/contact-form';
 import Services from '../../components/homePage/servicesSplited';
+import ServiceCarousel from '../../components/heroCarrusel/servicesCarrusel';
 
 function HomePage(props) {
   const featuredPosts = getFeaturedPosts();
@@ -21,6 +22,7 @@ function HomePage(props) {
       </Head>
       <Hero />
       <Services/>
+      <ServiceCarousel/>
       <FeaturedPosts posts={featuredPosts} />
       <ContactForm/>
     </Fragment>
