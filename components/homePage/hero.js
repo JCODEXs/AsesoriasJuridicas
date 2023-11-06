@@ -62,6 +62,36 @@ volume_up
   }, [videoRef]);
   return (
     <section className={classes.hero}>
+      <div className={classes.image}>
+        <video
+          className={classes.reactive}
+          controls
+          ref={videoRef}
+          autoPlay
+          muted={isMuted}
+          loop
+          width={350} // Set the width of the video
+          height={480} // Set the height of the video
+          style={{ objectFit: 'cover', width: '90%', maxWidth: '1000px',maxHeight:"300px" }}
+        >
+          <source
+            src="./images/site/Pensiones_Colombianos._720p.mp4"
+            type="video/mp4"
+          />
+          {/* Add additional source elements for other video formats if needed */}
+          Your browser does not support the video tag.
+        </video>
+     
+        {/* <EmailForm /> */}
+       
+        {/* <Image
+          src='/images/site/icono.png'
+          alt='Pensiones Colombianos'
+          width={200}
+          height={200}
+        /> */}
+      
+      </div>
       <div
         style={
           {
@@ -85,36 +115,6 @@ volume_up
         <q style={{margin:"0.5rem",fontFamily:"Crimson Text",fontWeight:"400"}}>Soy CASACIONISTA porque llevo en la sangre justicia</q>
     
         </div>
-      </div>
-      <div className={classes.image}>
-        <video
-          className={classes.reactive}
-          controls
-          ref={videoRef}
-          autoPlay
-          muted={isMuted}
-          loop
-          width={350} // Set the width of the video
-          height={480} // Set the height of the video
-          style={{ objectFit: 'cover', width: '90%', maxWidth: '1000px',maxHeight:"300px" }}
-        >
-          <source
-            src="./images/site/Pensiones_Colombianos._720p.mp4"
-            type="video/mp4"
-          />
-          {/* Add additional source elements for other video formats if needed */}
-          Your browser does not support the video tag.
-        </video>
-     
-        <EmailForm />
-       
-        {/* <Image
-          src='/images/site/icono.png'
-          alt='Pensiones Colombianos'
-          width={200}
-          height={200}
-        /> */}
-      
       </div>
     </section>
   );

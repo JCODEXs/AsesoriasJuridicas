@@ -19,7 +19,7 @@
     background-color: var(--color-grey-700);
     background:"rgba(242, 188, 27, 0.5)";
     margin: auto;
-    /* object-fit: cover; */
+    object-fit: cover;
   }
   .reactive {
     width: 100%; /* Make the video width 100% of its container */

@@ -1,15 +1,17 @@
-import { Fragment } from 'react';
+import { Fragment} from 'react';
 import Head from 'next/head';
 
 import FeaturedPosts from '../../components/homePage/featuredPost';
 import Hero from '../../components/homePage/hero';
 import { getFeaturedPosts } from '../../lib/posts-util';
 import ContactForm from '../../components/contact/contact-form';
-import Services from '../../components/homePage/servicesSplited';
-import ServiceCarousel from '../../components/heroCarrusel/servicesCarrusel';
+import EspecialInfo from '../../components/homePage/specialInfo';
+
+
 
 function HomePage(props) {
   const featuredPosts = getFeaturedPosts();
+
   return (
     <Fragment
     style={{background: "rgb(10,10,15,0.5)"}} >
@@ -21,8 +23,7 @@ function HomePage(props) {
         />
       </Head>
       <Hero />
-      <Services/>
-      <ServiceCarousel/>
+  <EspecialInfo/>
       <FeaturedPosts posts={featuredPosts} />
       <ContactForm/>
     </Fragment>

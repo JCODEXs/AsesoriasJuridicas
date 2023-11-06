@@ -1,0 +1,22 @@
+.link {
+    text-align: center;
+    font-size: 16px;
+    color: #383838;
+    text-decoration: underline;
+  }
+  
+  .link:hover {
+    text-decoration: none;
+    color: #cb2c2c;
+  }
+  .iconStyle {
+    width: "28px";
+    height: "28px";
+    object-fit: "cover";
+  }
+  /* .link a {
+    text-align: center;
+    font-size: 16px;
+    color: #a12929;
+    text-decoration: underline;
+  } */

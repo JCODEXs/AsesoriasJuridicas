@@ -1,23 +1,11 @@
-// "use client"
+"use client"
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-import EmailForm from "./emailForm";
 import ContactInfo from "../contactInfo/contactInfo";
-
+import classes from "./simple.module.css"
 function FooterSimple() {
-  const linkStyle = {
-    textAlign: "center",
-    fontSize: "13px",
-    color: "#333",
-    textDecoration: "underline",
-  };
 
-  const iconStyle = {
-    width: "28px",
-    height: "28px",
-    objectFit: "cover",
-  };
   return (
     <div
       class="footer"
@@ -49,7 +37,7 @@ function FooterSimple() {
             maxHeight: "175px",
             gap:"0.68rem"
           }}>
-           <div style={linkStyle}>
+           <div className={classes.link}>
                 <Link
                   href="https://procesos.ramajudicial.gov.co/procesoscs/ConsultaJusticias21.aspx?EntryId=fhew4AwaFKC0TSKjVfuB0BkS4MY%3d "
                   target="_blank" rel="noopener noreferrer"
@@ -57,7 +45,7 @@ function FooterSimple() {
                   Corte Suprema
                 </Link>
               </div> 
-           <div style={linkStyle}>
+           <div className={classes.link}>
                 <Link
                   href="https://sede.colpensiones.gov.co/tramite/updInfo/74/ "
                   target="_blank" rel="noopener noreferrer"
@@ -65,7 +53,7 @@ function FooterSimple() {
                   Calcula tu pension
                 </Link>
               </div> 
-           <div style={linkStyle}>
+           <div className={classes.link}>
                 <Link
                   href="https://www.porvenir.com.co/web/personas/inicio "
                   target="_blank" rel="noopener noreferrer"
@@ -73,7 +61,7 @@ function FooterSimple() {
                   Porvenir
                 </Link>
               </div> 
-           <div style={linkStyle}>
+           <div className={classes.link}>
                 <Link
                   href="https://www.colfondos.com.co/dxp/web/guest"
                   target="_blank" rel="noopener noreferrer"
@@ -81,7 +69,7 @@ function FooterSimple() {
                   Colfondos
                 </Link>
               </div> 
-           <div style={linkStyle}>
+           <div className={classes.link}>
                 <Link
                   href="https://www.proteccion.com/contenidos/personas/inversion/ "
                   target="_blank" rel="noopener noreferrer"
@@ -89,7 +77,7 @@ function FooterSimple() {
                   Proteccion
                 </Link>
               </div> 
-           <div style={linkStyle}>
+           <div className={classes.link}>
                 <Link
                   href="https://www.skandia.co/ "
                   target="_blank" rel="noopener noreferrer"
@@ -109,21 +97,21 @@ function FooterSimple() {
           }}
         >
           <div>
-            <p style={linkStyle}>
+            <p className={classes.link}>
               <Link href="/contact" target="undefined">
                 Contacto
               </Link>
             </p>
           </div>
           <div>
-            <p style={linkStyle}>
+            <p className={classes.link}>
               <Link href="https://www.triptyclondon.com/faq" target="_self">
                 T&Cs
               </Link>
             </p>
           </div>
           <div>
-            <p style={linkStyle}>
+            <p className={classes.link}>
               <Link
                 href="https://www.triptyclondon.com/store-policy"
                 target="_self"
@@ -184,7 +172,7 @@ function FooterSimple() {
               </div>
               <div style={{ zIndex: 10 }}>
                 <a href="https://www.facebook.com/pensiones.colombianos.9" target="_blank" rel="noopener noreferrer">
-                  <Image height={24} width={24} src="/facebook.png" alt="face" />
+                  <Image height={26} width={26} src="/facebook.png" alt="face" />
                 </a>
               </div>
               <div style={{ zIndex: 10 }}>

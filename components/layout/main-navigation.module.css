@@ -57,7 +57,7 @@
 
 .header a {
   text-decoration: none; /* Remove underlines from links */
-  color:#D92323; /* Link text color */
+  color:#bba51a; /* Link text color */
   margin-right: 1rem; /* Add spacing between links */
 }
 
@@ -69,7 +69,7 @@
 
 .nav ul li {
   font-size: 1.2rem; 
-  color: #D92323
+  color: #500a0a
 }
 
 /* Style the logo if needed */
