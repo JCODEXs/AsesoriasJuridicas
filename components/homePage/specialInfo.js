@@ -3,6 +3,7 @@ import Services from '../../components/homePage/servicesSplited';
 import ServiceCarousel from '../../components/heroCarrusel/servicesCarrusel';
 import Experience from '../../components/homePage/experience';
 import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
+
 const EspecialInfo = forwardRef((props, ref) => {
     const [selectedItem, setSelectedItem] = useState(0);
     const servicesRef = useRef(null);
@@ -25,5 +26,5 @@ const EspecialInfo = forwardRef((props, ref) => {
     </div>
 </div>
 )})
-
+EspecialInfo.displayName = 'EspecialInfo';
 export default EspecialInfo
