@@ -18,6 +18,7 @@ const Experience = () => {
     pensión de vejez, invalidez, sobrevivencia, tutelas y recursos de
     casación ante la Corte Suprema de Justicia, Sala Laboral."
     inverted={true}
+    title="Nosotros"
     />
    
     {/* <Image

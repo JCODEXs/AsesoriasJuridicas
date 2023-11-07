@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import FallingImage from "../fallinImage/fallInImage";
 
-const Services = ({setSelectedItem}) => {
+const Services = ({setSelectedItem,scrollToRef}) => {
 
 
   return (
@@ -19,9 +19,9 @@ const Services = ({setSelectedItem}) => {
         }}
       >
         <div
-        onClick={()=>setSelectedItem(0)}
+        onClick={()=>{setSelectedItem(0),scrollToRef()}}
           style={{
-            flex: "1 0 23%",
+            flex: "1",
             maxWidth: "400px",
             display: "flex",
             justifyContent: "center",
@@ -56,9 +56,9 @@ const Services = ({setSelectedItem}) => {
           </p> */}
         </div>
         <div
-        onClick={()=>setSelectedItem(1)}
+        onClick={()=>{setSelectedItem(1),scrollToRef()}}
           style={{
-            flex: "1 0 23%",
+            flex: "1",
             maxWidth: "400px",
             display: "flex",
             justifyContent: "center",
@@ -94,9 +94,9 @@ const Services = ({setSelectedItem}) => {
           </p> */}
         </div>
         <div
-        onClick={()=>setSelectedItem(2)}
+        onClick={()=>{setSelectedItem(2),scrollToRef()}}
           style={{
-            flex: "1 0 23%",
+            flex: "1",
             maxWidth: "400px",
             display: "flex",
             justifyContent: "center",
@@ -132,9 +132,9 @@ const Services = ({setSelectedItem}) => {
           </p> */}
         </div>
         <div
-        onClick={()=>setSelectedItem(3)}
+        onClick={()=>{setSelectedItem(3),scrollToRef()}}
           style={{
-            flex: "1 0 23%",
+            flex: "1",
             maxWidth: "400px",
             display: "flex",
             justifyContent: "center",
@@ -169,7 +169,7 @@ const Services = ({setSelectedItem}) => {
             acceso equitativo a los beneficios y recursos adecuados.
           </p> */}
         </div>
-        <div
+        {/* <div
           style={{
             display: "flex",
             flexDirection: "column",
@@ -178,7 +178,7 @@ const Services = ({setSelectedItem}) => {
             margin: "1.3rem",
             // fontFamily: "palo seco",
           }}
-        >
+        > */}
       
            {/* <Image
             src="/images/site/balance.jpg"
@@ -206,7 +206,7 @@ const Services = ({setSelectedItem}) => {
               fondos privados de pensión.{" "}
             </p> */}
           {/* </div> */}
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );

@@ -38,7 +38,7 @@ const servicesData = [
   // },
 ];
 
-const ServiceCarousel = ({ selectedItem }) => {
+const ServiceCarousel = ({ selectedItem,serviceRef }) => {
   console.log(selectedItem);
 
   return (
@@ -78,6 +78,7 @@ const ServiceCarousel = ({ selectedItem }) => {
            style={{maxWidth: '550px',opacity:0.45}}
          />
          <div 
+         ref={serviceRef}
            style={{
              position: 'absolute',
             //  top: '5%',

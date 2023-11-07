@@ -45,7 +45,7 @@ function FooterSimple() {
                   Corte Suprema
                 </Link>
               </div> 
-           <div className={classes.link}>
+           {/* <div className={classes.link}>
                 <Link
                   href="https://sede.colpensiones.gov.co/tramite/updInfo/74/ "
                   target="_blank" rel="noopener noreferrer"
@@ -84,7 +84,7 @@ function FooterSimple() {
                 >
                   Skandia
                 </Link>
-              </div> 
+              </div>  */}
             </div>
         </div>
         {/* <div

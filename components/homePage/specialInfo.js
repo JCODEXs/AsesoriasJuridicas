@@ -2,19 +2,28 @@
 import Services from '../../components/homePage/servicesSplited';
 import ServiceCarousel from '../../components/heroCarrusel/servicesCarrusel';
 import Experience from '../../components/homePage/experience';
-import { useState } from 'react';
-function EspecialInfo() {
-    const [selectedItem,setSelectedItem]=useState(0)
-    console.log(selectedItem)
-   
-  
+import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
+const EspecialInfo = forwardRef((props, ref) => {
+    const [selectedItem, setSelectedItem] = useState(0);
+    const servicesRef = useRef(null);
+
+    const scrollToRef = () => {
+        servicesRef.current.scrollIntoView({ behavior: 'smooth',block:"center" });
+    };
+    
+    useImperativeHandle(ref, () => ({
+        scrollToRef,
+    }));
+
     return (
 <div>
     
     <Experience/>
-    <Services setSelectedItem={setSelectedItem}/>
-    <ServiceCarousel selectedItem={selectedItem}/>
+    <Services setSelectedItem={setSelectedItem} scrollToRef={scrollToRef} />
+    <div ref={servicesRef}>
+        <ServiceCarousel selectedItem={selectedItem} />
+    </div>
 </div>
-)}
+)})
 
 export default EspecialInfo

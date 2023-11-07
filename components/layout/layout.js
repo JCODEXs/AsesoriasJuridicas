@@ -12,6 +12,31 @@ function Layout(props) {
       <a
      style={{
       position: 'fixed',
+      bottom: '5.2rem',
+      right: '1.7rem',
+      zIndex: 100
+    }}
+     target="_blank"
+     rel="noopener noreferrer"
+        width="50px"
+        aria-label="call us"
+        href="tel:573167591399"
+      >
+        {" "}
+        <Image
+          alt="call us"
+          src="/images/site/phone.png"
+          width={55}
+          height={55}
+          style={{
+            borderRadius:"50%"
+           
+          }}
+        />{" "}
+      </a>
+      <a
+     style={{
+      position: 'fixed',
       bottom: '1.2rem',
       right: '1.7rem',
       zIndex: 100
