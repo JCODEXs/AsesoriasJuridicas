@@ -1,9 +1,16 @@
-"use client"
-import React, { useEffect, useState,useRef } from "react";
+"use client";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "./fallInImage.module.css";
 import Image from "next/image";
-const FallingImage = ({ image, inverted, text, title }) => {
-  console.log(inverted)
+const FallingImage = ({
+  image,
+  inverted,
+  text,
+  title,
+  width = 150,
+  height = 120,
+}) => {
+  console.log(inverted);
   const [shouldAnimate, setShouldAnimate] = useState(null);
   const refElement = useRef(null);
 
@@ -16,29 +23,45 @@ const FallingImage = ({ image, inverted, text, title }) => {
         if (scrollPosition > refPosition) {
           setShouldAnimate(true);
           // console.log(refPosition,scrollPosition)
-         
-        } else {
-          setShouldAnimate(false);
-          // console.log(refPosition)
         }
+        // else {
+        //   setShouldAnimate(false);
+        //   // console.log(refPosition)
+        // }
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const animationClass = shouldAnimate ? (!inverted ? styles.animate : styles.animateLeft) : '';
+  const animationClass = shouldAnimate
+    ? !inverted
+      ? styles.animate
+      : styles.animateLeft
+    : "";
   return (
-    <div className={ styles.container } ref={refElement}  >
-      <div className={inverted ?styles.inverted :styles.content}>
+    <div className={styles.container} ref={refElement}>
+      <div className={inverted ? styles.inverted : styles.content}>
         <div className={styles.text}>
           <div className={styles.title}>{title}</div>
           <p>{text}</p>
         </div>
-        <Image src={image} alt="Falling" width={200} height={200}  className={shouldAnimate ?  (!inverted ? `${styles.fallingImage} ${styles.animate}`: `${styles.fallingImage} ${styles.animateLeft}`) : styles.fallingImage} />
+        <Image
+          src={image}
+          alt="Falling"
+          width={width}
+          height={height}
+          className={
+            shouldAnimate
+              ? !inverted
+                ? `${styles.fallingImage} ${styles.animate}`
+                : `${styles.fallingImage} ${styles.animateLeft}`
+              : styles.fallingImage
+          }
+        />
       </div>
     </div>
   );

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 import FallingImage from "../fallinImage/fallInImage";
 
-const Services = ({setSelectedItem,scrollToRef}) => {
-
-
+const Services = ({ setSelectedItem, scrollToRef }) => {
   return (
-    <div >
-      <div style={{textAlign:"center",fontSize:"1.5rem", margin:"1rem"}}>Servicios</div>
+    <div>
+      <div style={{ textAlign: "center", fontSize: "1.5rem", margin: "1rem" }}>
+        Servicios
+      </div>
       <div
         style={{
           display: "flex",
@@ -19,7 +19,9 @@ const Services = ({setSelectedItem,scrollToRef}) => {
         }}
       >
         <div
-        onClick={()=>{setSelectedItem(0),scrollToRef()}}
+          onMouseEnter={() => {
+            setSelectedItem(0), scrollToRef();
+          }}
           style={{
             flex: "1",
             maxWidth: "400px",
@@ -56,7 +58,9 @@ const Services = ({setSelectedItem,scrollToRef}) => {
           </p> */}
         </div>
         <div
-        onClick={()=>{setSelectedItem(1),scrollToRef()}}
+          onMouseEnter={() => {
+            setSelectedItem(1), scrollToRef();
+          }}
           style={{
             flex: "1",
             maxWidth: "400px",
@@ -94,7 +98,9 @@ const Services = ({setSelectedItem,scrollToRef}) => {
           </p> */}
         </div>
         <div
-        onClick={()=>{setSelectedItem(2),scrollToRef()}}
+          onMouseEnter={() => {
+            setSelectedItem(2), scrollToRef();
+          }}
           style={{
             flex: "1",
             maxWidth: "400px",
@@ -132,7 +138,9 @@ const Services = ({setSelectedItem,scrollToRef}) => {
           </p> */}
         </div>
         <div
-        onClick={()=>{setSelectedItem(3),scrollToRef()}}
+          onMouseEnter={() => {
+            setSelectedItem(3), scrollToRef();
+          }}
           style={{
             flex: "1",
             maxWidth: "400px",
@@ -179,8 +187,8 @@ const Services = ({setSelectedItem,scrollToRef}) => {
             // fontFamily: "palo seco",
           }}
         > */}
-      
-           {/* <Image
+
+        {/* <Image
             src="/images/site/balance.jpg"
             alt="Imagen 2"
             width={320}
@@ -205,7 +213,7 @@ const Services = ({setSelectedItem,scrollToRef}) => {
               pensionados o afiliados que fueron trasladados por engaño de los
               fondos privados de pensión.{" "}
             </p> */}
-          {/* </div> */}
+        {/* </div> */}
         {/* </div> */}
       </div>
     </div>

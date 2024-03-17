@@ -1,11 +1,10 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import ContactInfo from "../contactInfo/contactInfo";
-import classes from "./simple.module.css"
+import classes from "./simple.module.css";
 function FooterSimple() {
-
   return (
     <div
       class="footer"
@@ -22,30 +21,41 @@ function FooterSimple() {
         style={{
           display: "flex",
           flexDirection: "row",
-          flexWrap:"wrap",
+          flexWrap: "wrap",
           justifyContent: "space-evenly",
-          gap:"0.25rem",
+          gap: "0.25rem",
           alignItems: "center",
         }}
       >
         <div>
-          <div style={{fontSize:"1.1rem", fontWeight:500, marginBottom:"1rem"}}>Enlaces de interes </div>   
-          <div  style={{
-            display: "grid",
-            gridTemplateColumns: "10rem 1fr",
-            alignItems: "center",
-            maxHeight: "175px",
-            gap:"0.68rem"
-          }}>
-           <div className={classes.link}>
-                <Link
-                  href="https://procesos.ramajudicial.gov.co/procesoscs/ConsultaJusticias21.aspx?EntryId=fhew4AwaFKC0TSKjVfuB0BkS4MY%3d "
-                  target="_blank" rel="noopener noreferrer"
-                >
-                  Corte Suprema
-                </Link>
-              </div> 
-           {/* <div className={classes.link}>
+          <div
+            style={{
+              fontSize: "1.5rem",
+              fontWeight: 500,
+              marginBottom: "1rem",
+            }}
+          >
+            Enlaces de interes{" "}
+          </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "10rem 1fr",
+              alignItems: "center",
+              maxHeight: "175px",
+              gap: "0.68rem",
+            }}
+          >
+            <div className={classes.link}>
+              <Link
+                href="https://procesos.ramajudicial.gov.co/procesoscs/ConsultaJusticias21.aspx?EntryId=fhew4AwaFKC0TSKjVfuB0BkS4MY%3d "
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Corte Suprema
+              </Link>
+            </div>
+            {/* <div className={classes.link}>
                 <Link
                   href="https://sede.colpensiones.gov.co/tramite/updInfo/74/ "
                   target="_blank" rel="noopener noreferrer"
@@ -85,7 +95,7 @@ function FooterSimple() {
                   Skandia
                 </Link>
               </div>  */}
-            </div>
+          </div>
         </div>
         {/* <div
           style={{
@@ -145,13 +155,9 @@ function FooterSimple() {
         </div> */}
         <ContactInfo />
       </div>
-     
+
       <div>
-        卷
-          
-            <div class="text-xs">
-          Copyright ©  2023 Metta Flow 
-            </div>
+        卷<div class="text-xs">Copyright © 2023 Metta Flow</div>
         <div>
           <ul aria-label="Social Bar">
             <div
@@ -166,18 +172,41 @@ function FooterSimple() {
               }}
             >
               <div style={{ zIndex: 10 }}>
-                <a href="https://www.instagram.com/pensionescolombianos/?hl=en" target="_blank" rel="noopener noreferrer" >
-                  <Image height={30} width={30} src="/instagram.png" alt="insta" />
+                <a
+                  href="https://www.instagram.com/pensionescolombianos/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    height={30}
+                    width={30}
+                    src="/instagram.png"
+                    alt="insta"
+                  />
                 </a>
               </div>
               <div style={{ zIndex: 10 }}>
-                <a href="https://www.facebook.com/pensiones.colombianos.9" target="_blank" rel="noopener noreferrer">
-                  <Image height={26} width={26} src="/facebook.png" alt="face" />
+                <a
+                  href="https://www.facebook.com/pensiones.colombianos.9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    height={26}
+                    width={26}
+                    src="/facebook.png"
+                    alt="face"
+                  />
                 </a>
               </div>
               <div style={{ zIndex: 10 }}>
                 <a href="" target="_blank" rel="noopener noreferrer">
-                  <Image height={30} width={30} src="/twitter.svg" alt="twitter"/>
+                  <Image
+                    height={30}
+                    width={30}
+                    src="/twitter.svg"
+                    alt="twitter"
+                  />
                 </a>
               </div>
             </div>

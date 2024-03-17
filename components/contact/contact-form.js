@@ -1,37 +1,37 @@
-"use client"
-import { useState, useEffect } from 'react';
+"use client";
+import { useState, useEffect } from "react";
 
-import styles from './contact-form.module.css';
-import Notification from '../notifications/notification';
-import Image from 'next/image';
+import styles from "./contact-form.module.css";
+import Notification from "../notifications/notification";
+import Image from "next/image";
 
 async function sendContactData(contactDetails) {
-  const response = await fetch('/api/contact', {
-    method: 'POST',
+  const response = await fetch("/api/contact", {
+    method: "POST",
     body: JSON.stringify(contactDetails),
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   });
-
   const data = await response.json();
 
   if (!response.ok) {
-    console.log("hi")
-    throw new Error(data.message || 'Something went wrong!');
+    console.log("hi");
+    throw new Error(data.message || "Something went wrong!");
   }
 }
 
-function ContactForm() {
-  const [enteredEmail, setEnteredEmail] = useState('');
-  const [enteredName, setEnteredName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [enteredMessage, setEnteredMessage] = useState('');
+function ContactForm({ showImage = true }) {
+  const [enteredEmail, setEnteredEmail] = useState("");
+  const [enteredName, setEnteredName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [enteredMessage, setEnteredMessage] = useState("");
   const [requestStatus, setRequestStatus] = useState(); // 'pending', 'success', 'error'
   const [requestError, setRequestError] = useState();
+  console.log(showImage);
 
   useEffect(() => {
-    if (requestStatus === 'success' || requestStatus === 'error') {
+    if (requestStatus === "success" || requestStatus === "error") {
       const timer = setTimeout(() => {
         setRequestStatus(null);
         setRequestError(null);
@@ -43,86 +43,98 @@ function ContactForm() {
 
   async function sendMessageHandler(event) {
     event.preventDefault();
-    setRequestStatus('pending');
+    setRequestStatus("pending");
 
     try {
       await sendContactData({
         email: enteredEmail,
         name: enteredName,
         message: enteredMessage,
-        phone:phone,
+        phone: phone,
       });
-      setRequestStatus('success');
-      setEnteredMessage('');
-      setEnteredEmail('');
-      setEnteredName('');
-      setPhone("")
+      setRequestStatus("success");
+      setEnteredMessage("");
+      setEnteredEmail("");
+      setEnteredName("");
+      setPhone("");
     } catch (error) {
       setRequestError(error.message);
-      setRequestStatus('error');
+      setRequestStatus("error");
     }
   }
 
   let notification;
 
-  if (requestStatus === 'pending') {
+  if (requestStatus === "pending") {
     notification = {
-      status: 'pending',
-      title: 'Enviando mensaje...',
-      message: 'Tu mensaje esta siendo enviado..',
+      status: "pending",
+      title: "Enviando mensaje...",
+      message: "Tu mensaje esta siendo enviado..",
     };
   }
 
-  if (requestStatus === 'success') {
+  if (requestStatus === "success") {
     notification = {
-      status: 'success',
-      title: 'Exito!',
-      message: 'Mensaje Enviado Exitosamente!',
+      status: "success",
+      title: "Exito!",
+      message: "Mensaje Enviado Exitosamente!",
     };
   }
 
-  if (requestStatus === 'error') {
+  if (requestStatus === "error") {
     notification = {
-      status: 'error',
-      title: 'Error!',
+      status: "error",
+      title: "Error!",
       message: requestError,
     };
   }
 
   return (
-    <div style={{display:'flex',flexDirection:'row',flexWrap:"wrap",overflowY:"scroll",height:"100%",marginBottom:"3rem",minHeight:"40vh",alignContent: "flex-start",justifyContent: "center"}}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        overflowY: "scroll",
+        height: "100%",
+        marginBottom: "3rem",
+        minHeight: "40vh",
+        alignContent: "flex-start",
+        justifyContent: "center",
+      }}
+    >
       <section className={styles.contact}>
         <h1>¿Como podemos ayudarle?</h1>
         <form className={styles.form} onSubmit={sendMessageHandler}>
           <div className={styles.controls}>
             <div className={styles.control}>
-              <label htmlFor='email'> Email</label>
+              <label htmlFor="email"> Email</label>
               <input
-              style={{border:" 1px solid #0D0D0D"}}
-                type='email'
-                id='email'
+                style={{ border: " 1px solid #0D0D0D" }}
+                type="email"
+                id="email"
                 required
                 value={enteredEmail}
                 onChange={(event) => setEnteredEmail(event.target.value)}
               />
             </div>
             <div className={styles.control}>
-              <label htmlFor='name'>Nombre</label>
+              <label htmlFor="name">Nombre</label>
               <input
-               style={{border: "1px solid #0D0D0D"}}
-                type='text'
-                id='name'
+                style={{ border: "1px solid #0D0D0D" }}
+                type="text"
+                id="name"
                 required
                 value={enteredName}
                 onChange={(event) => setEnteredName(event.target.value)}
               />
             </div>
             <div className={styles.control}>
-              <label htmlFor='phone'>Telefono</label>
+              <label htmlFor="phone">Telefono</label>
               <input
-               style={{border: "1px solid #0D0D0D"}}
-                type='number'
-                id='phone'
+                style={{ border: "1px solid #0D0D0D" }}
+                type="number"
+                id="phone"
                 required
                 value={phone}
                 onChange={(event) => setPhone(event.target.value)}
@@ -130,19 +142,19 @@ function ContactForm() {
             </div>
           </div>
           <div className={styles.control}>
-            <label htmlFor='message'>Mensaje</label>
+            <label htmlFor="message">Mensaje</label>
             <textarea
-             style={{border: "1px solid #0D0D0D"}}
-              id='message'
-              rows='5'
+              style={{ border: "1px solid #0D0D0D" }}
+              id="message"
+              rows="5"
               required
               value={enteredMessage}
               onChange={(event) => setEnteredMessage(event.target.value)}
             ></textarea>
           </div>
-          
-            <button className="SubmitButton" >Enviar📨</button>
-     
+
+          <button className="SubmitButton">Enviar📨</button>
+
           <h1>Ingrese su informacion y nos pondremos en contacto con Usted</h1>
         </form>
         {notification && (
@@ -154,14 +166,16 @@ function ContactForm() {
         )}
         {/* <pre>{JSON.stringify(notification,null,2)}</pre> */}
       </section>
-      <div className={styles.image}>
-       <Image
-         src='/images/site/edgar.jpg'
-         alt='Pensiones Colombianos'
-         width={200}
-         height={200}
-       />
-     </div>
+      {showImage && (
+        <div className={styles.image}>
+          <Image
+            src="/images/site/edgar.jpg"
+            alt="Pensiones Colombianos"
+            width={300}
+            height={300}
+          />
+        </div>
+      )}
     </div>
   );
 }

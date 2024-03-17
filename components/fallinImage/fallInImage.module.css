@@ -14,7 +14,23 @@
       transform: translateX(0);
     }
   }
-  
+  .slide-in-and-stay {
+    width: 200px;
+    height: 90px;
+    background-color: lightblue;
+    position: relative;
+    animation: slideInAndStay 1s forwards;
+}
+
+@keyframes slideInAndStay {
+    0% {
+        left: -200px; /* Start position */
+    }
+    100% {
+        left: 0; /* End position */
+    }
+}
+
   @keyframes fallAnimationLeft {
     0% {
       opacity: 0;
@@ -27,12 +43,13 @@
   }
   
   .fallingImage.animate {
-    animation: fallAnimation 1s ease;
+    animation: fallAnimation 1s forwards;
     opacity: 1;
+     background-color: lightblue;
   }
   
   .fallingImage.animateLeft {
-    animation: fallAnimationLeft 1s ease;
+    animation: fallAnimationLeft 1s forwards;
     opacity: 1;
   }
   .container {

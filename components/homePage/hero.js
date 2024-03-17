@@ -18,19 +18,15 @@ function Hero() {
       setIsMuted(!isMuted);
     }
   };
-const soundButton=isMuted ? (
-  <button onClick={handlePlay}>
-  <span class="material-symbols-outlined">
-volume_off
-</span>
-  </button>
-) : (
-  <button onClick={handlePlay}>
-   <span class="material-symbols-outlined">
-volume_up
-</span>
-  </button>
-)
+  const soundButton = isMuted ? (
+    <button onClick={handlePlay}>
+      <span class="material-symbols-outlined">volume_off</span>
+    </button>
+  ) : (
+    <button onClick={handlePlay}>
+      <span class="material-symbols-outlined">volume_up</span>
+    </button>
+  );
   useEffect(() => {
     const video = videoRef.current;
 
@@ -72,7 +68,12 @@ volume_up
           loop
           width={350} // Set the width of the video
           height={480} // Set the height of the video
-          style={{ objectFit: 'cover', width: '90%', maxWidth: '1000px',maxHeight:"300px" }}
+          style={{
+            objectFit: "cover",
+            width: "100%",
+            maxWidth: "1000px",
+            maxHeight: "300px",
+          }}
         >
           <source
             src="./images/site/Pensiones_Colombianos._720p.mp4"
@@ -81,16 +82,15 @@ volume_up
           {/* Add additional source elements for other video formats if needed */}
           Your browser does not support the video tag.
         </video>
-     
+
         {/* <EmailForm /> */}
-       
+
         {/* <Image
           src='/images/site/icono.png'
           alt='Pensiones Colombianos'
           width={200}
           height={200}
         /> */}
-      
       </div>
       <div
         style={
@@ -109,11 +109,18 @@ volume_up
           }}
         >
           <div style={{ display: "flex", fontSize: "1.7rem" }}>
-            Hola soy Edgar Tabares{" "}
-            {soundButton}
+            Hola soy Edgar Tabares {soundButton}
           </div>
-        <q style={{margin:"0.5rem",fontFamily:"Crimson Text",fontWeight:"400"}}>Soy CASACIONISTA porque llevo en la sangre justicia</q>
-    
+          <q
+            style={{
+              margin: "0.6rem",
+              fontFamily: "Crimson Text",
+              fontWeight: "600",
+              fontSize: "1.6rem",
+            }}
+          >
+            Soy CASACIONISTA porque llevo en la sangre justicia
+          </q>
         </div>
       </div>
     </section>
