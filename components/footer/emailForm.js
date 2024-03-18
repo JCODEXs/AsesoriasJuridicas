@@ -1,11 +1,13 @@
-"use client"
-import React, { useEffect, useState } from 'react';
-import Notification from "../../components/notifications/notification"
-function EmailForm() {
+"use client";
+import React, { useEffect, useState } from "react";
+import Notification from "../../components/notifications/notification";
+import styles from "../fallinImage/fallInImage.module.css";
+function EmailForm({ shouldAnimate, setShouldAnimate }) {
   const [requestStatus, setRequestStatus] = useState(); // 'pending', 'success', 'error'
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState('Email invalido');
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("Email invalido");
   const [emailValid, setEmailValid] = useState(false);
+  const [animateInput, setAnimateInput] = useState(true);
 
   const checkEmail = (input) => {
     setEmail(input);
@@ -16,56 +18,56 @@ function EmailForm() {
       setEmailValid(false);
     }
   };
-  
+
   async function sendContactData(contactDetails) {
-    const response = await fetch('/api/email', {
-      method: 'POST',
-      body: JSON.stringify({contactDetails}),
+    const response = await fetch("/api/email", {
+      method: "POST",
+      body: JSON.stringify({ contactDetails }),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-    })
+    });
   }
   const validateEmail = (email) => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
   };
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!emailValid) {
-      setRequestStatus('error');
+      setRequestStatus("error");
       return;
     }
-    setRequestStatus('pending');
-   try{
-     sendContactData(email)
-     setRequestStatus('success');
-     setEmail('');
-       }catch(er){
-        console.log(er)
-         setRequestStatus('error');
-         setError(er)
-       } 
-    console.log('Email submitted:', email);
+    setRequestStatus("pending");
+    try {
+      sendContactData(email);
+      setRequestStatus("success");
+      setEmail("");
+    } catch (er) {
+      console.log(er);
+      setRequestStatus("error");
+      setError(er);
+    }
+    console.log("Email submitted:", email);
   };
 
   useEffect(() => {
-    if (requestStatus === 'success' || requestStatus === 'error') {
+    if (requestStatus === "success" || requestStatus === "error") {
       const timer = setTimeout(() => {
         setRequestStatus(null);
-        
       }, 3000);
 
       return () => clearTimeout(timer);
     }
   }, [requestStatus]);
+  const animate = shouldAnimate && animateInput;
   return (
     <div>
-      <form onSubmit={handleSubmit} style={{margin:"0.3rem"}}>
+      <form onSubmit={handleSubmit} style={{ margin: "0.3rem" }}>
         <input
-          className="InputField"
+          onSelect={() => setAnimateInput(false)}
+          className={animate ? `${styles.inputarea}` : "InputField"}
           type="email"
           placeholder="Ingresa tu correo"
           value={email}
@@ -77,11 +79,7 @@ function EmailForm() {
         </button>
       </form>
       {requestStatus && (
-        <Notification
-          status={requestStatus}
-          requestError={error}
-      
-        />
+        <Notification status={requestStatus} requestError={error} />
       )}
     </div>
   );

@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import FallingImage from "../fallinImage/fallInImage";
+import EmailForm from "../footer/emailForm";
+import CallForAction from "../fallinImage/callForAction";
 
 const Experience = () => {
   return (
@@ -31,8 +33,7 @@ const Experience = () => {
     height={310}
     style={{ width: "100%",maxWidth: "35%",aspectRatio:"auto" }}
     /> */}
-      <FallingImage
-        image="/images/site/balance.jpg"
+      <CallForAction
         title="Eligenos"
         text="Para ello, contamos con un equipo de alta calidad humana,
   comprometido con cada gestión que se realice para obtener la pensión

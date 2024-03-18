@@ -10,14 +10,14 @@ const FallingImage = ({
   width = 150,
   height = 120,
 }) => {
-  console.log(inverted);
   const [shouldAnimate, setShouldAnimate] = useState(null);
   const refElement = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       if (refElement.current) {
-        const refPosition = refElement.current.getBoundingClientRect().top;
+        const refPosition =
+          refElement.current.getBoundingClientRect().top - 372;
         const scrollPosition = window.scrollY;
         // console.log(scrollPosition,refPosition)
         if (scrollPosition > refPosition) {
@@ -45,7 +45,11 @@ const FallingImage = ({
   return (
     <div className={styles.container} ref={refElement}>
       <div className={inverted ? styles.inverted : styles.content}>
-        <div className={styles.text}>
+        <div
+          className={
+            shouldAnimate ? ` ${styles.animateText}` : ` ${styles.text}`
+          }
+        >
           <div className={styles.title}>{title}</div>
           <p>{text}</p>
         </div>
@@ -57,8 +61,8 @@ const FallingImage = ({
           className={
             shouldAnimate
               ? !inverted
-                ? `${styles.fallingImage} ${styles.animate}`
-                : `${styles.fallingImage} ${styles.animateLeft}`
+                ? ` ${styles.animate}`
+                : ` ${styles.animateLeft}`
               : styles.fallingImage
           }
         />

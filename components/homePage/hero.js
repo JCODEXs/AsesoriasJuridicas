@@ -7,7 +7,7 @@ import EmailForm from "../footer/emailForm";
 
 function Hero() {
   const videoRef = useRef(null);
-  console.log(videoRef);
+  // console.log(videoRef);
   const [isMuted, setIsMuted] = useState(true);
   const handlePlay = () => {
     if (videoRef.current) {
@@ -72,7 +72,7 @@ function Hero() {
             objectFit: "cover",
             width: "100%",
             maxWidth: "1000px",
-            maxHeight: "300px",
+            maxHeight: "370px",
           }}
         >
           <source

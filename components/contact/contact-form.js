@@ -16,7 +16,7 @@ async function sendContactData(contactDetails) {
   const data = await response.json();
 
   if (!response.ok) {
-    console.log("hi");
+    // console.log("hi");
     throw new Error(data.message || "Something went wrong!");
   }
 }
@@ -28,7 +28,7 @@ function ContactForm({ showImage = true }) {
   const [enteredMessage, setEnteredMessage] = useState("");
   const [requestStatus, setRequestStatus] = useState(); // 'pending', 'success', 'error'
   const [requestError, setRequestError] = useState();
-  console.log(showImage);
+  // console.log(showImage);
 
   useEffect(() => {
     if (requestStatus === "success" || requestStatus === "error") {
@@ -104,7 +104,9 @@ function ContactForm({ showImage = true }) {
       }}
     >
       <section className={styles.contact}>
-        <h1>¿Como podemos ayudarle?</h1>
+        <div className={styles.callToaction}>
+          Estamos seguros que podemos ayudarle
+        </div>
         <form className={styles.form} onSubmit={sendMessageHandler}>
           <div className={styles.controls}>
             <div className={styles.control}>

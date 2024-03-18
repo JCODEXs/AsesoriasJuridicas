@@ -23,7 +23,26 @@
     font-weight: bold;
     margin: var(--size-2) 0 var(--size-1) 0;
   }
-  
+   @keyframes InputAnimation {
+    0% {
+     color:#090f09/* Initial background color */
+  }
+  70% {
+     /* Color transition midpoint */
+    transform: scale(1.15); /* Slightly scale up */
+    color:#A69C17
+  }
+  100% {
+    
+  }
+}
+  .callToaction{
+    font-size: 1.5rem;
+    animation: InputAnimation 4s infinite;
+    margin:1rem;
+    display: flex;
+    justify-content: center;
+  }
   .form input,
   .form textarea {
     font: inherit;

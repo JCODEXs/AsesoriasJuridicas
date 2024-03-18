@@ -1,9 +1,69 @@
 .fallingImage {
     /* animation: fallAnimation 1s ease; */
     /* max-width: 30%; */
-    opacity: 0.010;
+    display: none;
     margin:auto
   }
+  @keyframes InputAnimation {
+    0% {
+    background-color: #ffffff; 
+    color:#090f09/* Initial background color */
+  }
+  50% {
+    background-color:#B3A85B; /* Color transition midpoint */
+    transform: scale(1.15); /* Slightly scale up */
+    color:#6f56c9
+  }
+  100% {
+    background-color: #ffffff; /* Return to initial background color */
+  }
+}
+
+/* Define a separate tick animation */
+@keyframes tick {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* Apply animation to the input element */
+.inputarea {
+  animation: InputAnimation 4s infinite; /* Adjust timing as needed */
+   animation-delay: 6s; 
+  width: 100%;
+  max-width: 27rem;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 2rem;
+}
+
+/* Apply animation to the tick element */
+.tick {
+  animation: tick 0.5s ease forwards; /* Adjust timing and easing as needed */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 50%;
+  width: 20px;
+  height: 40px;
+  border-color: #008000; /* Green color for tick */
+  border-style: solid;
+  border-width: 0 4px 4px 0;
+  opacity: 0;
+}
+.slide-in-and-stay {
+    width: 200px;
+    height: 90px;
+    background-color: lightblue;
+    position: relative;
+    animation: slideInAndStay 1s forwards;
+  }
+
   @keyframes fallAnimation {
     0% {
       opacity: 0;
@@ -14,22 +74,14 @@
       transform: translateX(0);
     }
   }
-  .slide-in-and-stay {
-    width: 200px;
-    height: 90px;
-    background-color: lightblue;
-    position: relative;
-    animation: slideInAndStay 1s forwards;
-}
-
-@keyframes slideInAndStay {
+  @keyframes slideInAndStay {
     0% {
         left: -200px; /* Start position */
-    }
-    100% {
+      }
+      100% {
         left: 0; /* End position */
     }
-}
+  }
 
   @keyframes fallAnimationLeft {
     0% {
@@ -41,14 +93,35 @@
       transform: translateX(0);
     }
   }
-  
-  .fallingImage.animate {
+  @keyframes displaceText {
+    0% {
+      opacity: 1;
+      
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(110px);
+    }
+  }
+
+  .animateText{
+    animation: displaceText 1s forwards;
+     margin:20px;
+    max-width: 440px;
+  }
+  .animate {
     animation: fallAnimation 1s forwards;
     opacity: 1;
-     background-color: lightblue;
+    
+  }
+  .animateInput {
+    animation: fallAnimation 1s forwards;
+    opacity: 1;
+    background-color: aquamarine;
+    
   }
   
-  .fallingImage.animateLeft {
+  .animateLeft {
     animation: fallAnimationLeft 1s forwards;
     opacity: 1;
   }
@@ -80,8 +153,16 @@
     justify-content: center;
     margin-inline: 1.5rem;
   }
+  .contentCallAction {
+    
+    align-items: center;
+    align-items:center;
+    justify-content: center;
+    margin-inline: 1.5rem;
+  }
   
   .text {
+    left:auto;
     margin:20px;
     max-width: 440px;
   }

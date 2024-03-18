@@ -20,7 +20,7 @@ function FeaturedPosts(props) {
         style={{
           display: "flex",
           justifyContent: "center",
-          paddingInline: "6rem",
+          paddingInline: "3rem",
           background: "linear-gradient(to bottom,#DFE0E0,#575B66,#DFE0E0)",
         }}
       >
