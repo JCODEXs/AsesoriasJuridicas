@@ -27,6 +27,7 @@ function FooterSimple() {
           alignItems: "center",
         }}
       >
+        <ContactInfo />
         <div>
           <div
             style={{
@@ -153,7 +154,6 @@ function FooterSimple() {
             </p>
           </div>
         </div> */}
-        <ContactInfo />
       </div>
 
       <div>

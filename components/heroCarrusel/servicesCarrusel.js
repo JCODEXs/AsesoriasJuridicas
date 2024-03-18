@@ -47,7 +47,7 @@ const ServiceCarousel = ({ selectedItem, serviceRef }) => {
       <Carousel
         selectedItem={selectedItem}
         showThumbs={false}
-        //  autoPlay
+        autoPlay
         // infiniteLoop
         //  interval={7000}
         showArrows={false}
@@ -75,7 +75,12 @@ const ServiceCarousel = ({ selectedItem, serviceRef }) => {
               alt={"Law service"}
               width={320}
               height={285}
-              style={{ maxWidth: "320px", opacity: 0.35, height: "auto" }}
+              style={{
+                maxWidth: "320px",
+                opacity: 0.35,
+                height: "auto",
+                zIndex: 20,
+              }}
             />
             <div
               ref={serviceRef}
