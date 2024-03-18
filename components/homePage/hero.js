@@ -108,7 +108,7 @@ function Hero() {
             marginBottom: "0.7rem",
           }}
         >
-          <div style={{ display: "flex", fontSize: "1.7rem" }}>
+          <div style={{ display: "flex", fontSize: "larger" }}>
             Hola soy Edgar Tabares {soundButton}
           </div>
           <q

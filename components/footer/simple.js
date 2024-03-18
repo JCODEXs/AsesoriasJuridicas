@@ -157,7 +157,7 @@ function FooterSimple() {
       </div>
 
       <div>
-        卷<div class="text-xs">Copyright © 2023 Metta Flow</div>
+        卷<div className="text-xs">Copyright © 2023 Metta Flow</div>
         <div>
           <ul aria-label="Social Bar">
             <div

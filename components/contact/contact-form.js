@@ -107,6 +107,9 @@ function ContactForm({ showImage = true }) {
         <div className={styles.callToaction}>
           Estamos seguros que podemos ayudarle
         </div>
+        <h1 style={{ margin: "1rem" }}>
+          Ingrese su informacion y nos pondremos en contacto con Usted
+        </h1>
         <form className={styles.form} onSubmit={sendMessageHandler}>
           <div className={styles.controls}>
             <div className={styles.control}>
@@ -156,8 +159,6 @@ function ContactForm({ showImage = true }) {
           </div>
 
           <button className="SubmitButton">Enviar📨</button>
-
-          <h1>Ingrese su informacion y nos pondremos en contacto con Usted</h1>
         </form>
         {notification && (
           <Notification

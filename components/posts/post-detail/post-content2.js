@@ -1,6 +1,6 @@
-"use client"
-import React, { useEffect, useState } from 'react';
-import { Document, Page, pdfjs } from 'react-pdf';
+"use client";
+import React, { useEffect, useState } from "react";
+import { Document, Page, pdfjs } from "react-pdf";
 
 // Configure pdfjs worker to load PDF files
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
@@ -11,30 +11,29 @@ const PDFViewer = (props) => {
   const [pageNumber, setPageNumber] = useState(1);
   const pdfPath = `/pdf/${post.slug}.pdf`;
   const [pdfBlob, setPdfBlob] = useState(null);
-  const [url,setUrl]=useState();
-  const [scale, setScale] = useState(0.7)
+  const [url, setUrl] = useState();
+  const [scale, setScale] = useState(0.7);
 
   useEffect(() => {
-    console.log("hi")
-        // Load the PDF file
-  fetch(pdfPath, {headers: {
-      'Content-Type': 'application/pdf',
-    }
-  },)
+    console.log("hi");
+    // Load the PDF file
+    fetch(pdfPath, {
+      headers: {
+        "Content-Type": "application/pdf",
+      },
+    })
       .then((response) => response.blob())
       .then((blob) => {
         // Load the PDF blob
         setPdfBlob(blob);
-        const urlBlob= URL.createObjectURL(blob)
-        setUrl(urlBlob)
-        console.log("hi",blob)
-        
+        const urlBlob = URL.createObjectURL(blob);
+        setUrl(urlBlob);
+        // console.log("hi",blob)
       })
       .catch((error) => {
-        console.error('Error loading PDF:', error);
+        console.error("Error loading PDF:", error);
       });
-   
-  }, [post.slug,pdfPath]);
+  }, [post.slug, pdfPath]);
 
   const handleZoomIn = () => {
     setScale(scale + 0.12); // Increase the scale factor for zooming in
@@ -48,17 +47,17 @@ const PDFViewer = (props) => {
   };
   const downloadPDF = () => {
     const pdfUrl = URL.createObjectURL(pdfBlob);
-     setUrl(pdfUrl)
+    setUrl(pdfUrl);
     // Check if a PDF blob URL exists
-    console.log("hi",pdfBlob,url)
+    console.log("hi", pdfBlob, url);
     if (url) {
-    console.log("hi")
+      console.log("hi");
 
       // Create an anchor element
-      const a = document.createElement('a');
+      const a = document.createElement("a");
       a.href = pdfUrl;
       a.download = `${post.slug}.pdf`; // Set the desired file name
-      a.style.display = 'none'; // Hide the anchor element
+      a.style.display = "none"; // Hide the anchor element
 
       // Append the anchor element to the document body
       document.body.appendChild(a);
@@ -72,56 +71,65 @@ const PDFViewer = (props) => {
   };
   return (
     <div className="pdfViewer">
-
       <div className="pagination">
-        <div style={{ display:"flex",justifyContent:"center"}}>
-  
-            Pagina {pageNumber} de {numPages}
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          Pagina {pageNumber} de {numPages}
         </div>
-        <div style={{display:'flex',justifyContent:"space-around", fontSize: "1.4rem",
-  margin:"0.15rem",
-  padding:" 0.1rem"}}>
-        <div>
-          <button onClick={handleZoomIn}><span class="material-symbols-outlined">
-zoom_in
-</span></button>
-          <button onClick={handleZoomOut}><span class="material-symbols-outlined">
-zoom_out
-</span></button>
-<button
-          onClick={() => setPageNumber(Math.max(1, pageNumber - 1))}
-          disabled={pageNumber <= 1}
-          >
-         <span class="material-symbols-outlined">
-arrow_left
-</span>
-        </button>
-        <button
-          onClick={() => setPageNumber(Math.min(numPages, pageNumber + 1))}
-          disabled={pageNumber >= numPages}
-          >
-         <span class="material-symbols-outlined">
-arrow_right
-</span>
-        </button>
-        </div>
-        <button onClick={downloadPDF}><span class="material-symbols-outlined">
-download
-</span></button>
-      </div>
-       
- 
-         
-      </div>
-      <div style={{ display:"flex",justifyContent:"center", width: '100%', height: 'auto',overflow:'scroll', minHeight:"78vh" }}>
-
-          {pdfBlob && (
-            
-            <Document file={pdfPath} onLoadSuccess={onDocumentLoadSuccess}>
-              <Page pageNumber={pageNumber} scale={scale} renderAnnotationLayer={false} renderTextLayer={false}/>
-            </Document>
-          )}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            fontSize: "1.4rem",
+            margin: "0.15rem",
+            padding: " 0.1rem",
+          }}
+        >
+          <div>
+            <button onClick={handleZoomIn}>
+              <span class="material-symbols-outlined">zoom_in</span>
+            </button>
+            <button onClick={handleZoomOut}>
+              <span class="material-symbols-outlined">zoom_out</span>
+            </button>
+            <button
+              onClick={() => setPageNumber(Math.max(1, pageNumber - 1))}
+              disabled={pageNumber <= 1}
+            >
+              <span class="material-symbols-outlined">arrow_left</span>
+            </button>
+            <button
+              onClick={() => setPageNumber(Math.min(numPages, pageNumber + 1))}
+              disabled={pageNumber >= numPages}
+            >
+              <span class="material-symbols-outlined">arrow_right</span>
+            </button>
           </div>
+          <button onClick={downloadPDF}>
+            <span class="material-symbols-outlined">download</span>
+          </button>
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          width: "100%",
+          height: "auto",
+          overflow: "scroll",
+          minHeight: "78vh",
+        }}
+      >
+        {pdfBlob && (
+          <Document file={pdfPath} onLoadSuccess={onDocumentLoadSuccess}>
+            <Page
+              pageNumber={pageNumber}
+              scale={scale}
+              renderAnnotationLayer={false}
+              renderTextLayer={false}
+            />
+          </Document>
+        )}
+      </div>
     </div>
   );
 };

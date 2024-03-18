@@ -38,8 +38,8 @@ const servicesData = [
   // },
 ];
 
-const ServiceCarousel = ({ selectedItem,serviceRef }) => {
-  console.log(selectedItem);
+const ServiceCarousel = ({ selectedItem, serviceRef }) => {
+  // console.log(selectedItem);
 
   return (
     <div className="hero-carousel" style={{ justifyContent: "center" }}>
@@ -55,49 +55,50 @@ const ServiceCarousel = ({ selectedItem,serviceRef }) => {
         transitionTime={1500}
         width={"95%"}
         swipeable={true}
-             >
+      >
         {servicesData.map((image) => (
-         <div
-         key={image.image}
-         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          minWidth: '330px',
-          maxWidth: '100%',
-          margin: '1rem',
-          position: 'relative',
-         }}
-       >
-         <Image 
-           src={image.image}
-           alt={"Law service"}
-           width={320}
-           height={285}
-           style={{maxWidth: '550px',opacity:0.45}}
-         />
-         <div 
-         ref={serviceRef}
-           style={{
-             position: 'absolute',
-            //  top: '5%',
-            //  left: '15%',
-              // transform: 'translate(15%, 15%)',
-             display: 'flex',
-             flexDirection: 'column',
-             margin: '1rem',
-             alignItems: 'center',
-             maxWidth: '400px',
-             color: 'black', // change as needed
-             // add more styles as needed
-           }}
-         >
-           <div style={{fontSize: '1.5rem'}}>{image.title}</div>
-           <div style={{fontWeight: 500,maxWidth:"370px"}}>{image.description}</div>
-         </div>
-       </div>
-       
+          <div
+            key={image.image}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              minWidth: "330px",
+              maxWidth: "100%",
+              margin: "1rem",
+              position: "relative",
+            }}
+          >
+            <Image
+              src={image.image}
+              alt={"Law service"}
+              width={320}
+              height={285}
+              style={{ maxWidth: "320px", opacity: 0.35, height: "auto" }}
+            />
+            <div
+              ref={serviceRef}
+              style={{
+                position: "absolute",
+                //  top: '5%',
+                //  left: '15%',
+                // transform: 'translate(15%, 15%)',
+                display: "flex",
+                flexDirection: "column",
+                margin: "1rem",
+                alignItems: "center",
+                maxWidth: "400px",
+                color: "black", // change as needed
+                // add more styles as needed
+              }}
+            >
+              <div style={{ fontSize: "1.35rem" }}>{image.title}</div>
+              <div style={{ fontWeight: 500, maxWidth: "305px" }}>
+                {image.description}
+              </div>
+            </div>
+          </div>
         ))}
       </Carousel>
 

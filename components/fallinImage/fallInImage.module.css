@@ -95,23 +95,27 @@
   }
   @keyframes displaceText {
     0% {
-      opacity: 1;
+      opacity: 0;
+       transform: translateX(-30px);
       
     }
     100% {
       opacity: 1;
-      transform: translateX(110px);
+      transform: translateX(2px);
     }
   }
 
   .animateText{
     animation: displaceText 1s forwards;
+    opacity: 1;
      margin:20px;
     max-width: 440px;
   }
   .animate {
     animation: fallAnimation 1s forwards;
     opacity: 1;
+     width: 300;
+    height: auto;
     
   }
   .animateInput {
@@ -124,6 +128,8 @@
   .animateLeft {
     animation: fallAnimationLeft 1s forwards;
     opacity: 1;
+    width: 300;
+    height: auto;
   }
   .container {
     display:flex;

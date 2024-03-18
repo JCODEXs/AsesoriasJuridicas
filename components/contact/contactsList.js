@@ -6,7 +6,7 @@ const UserList = ({ contacts }) => {
   const [contactsList, setContactsList] = useState(
     contacts?.combinedResults || contacts
   );
-  console.log(requestStatus);
+  // console.log(requestStatus);
   async function deleteContact(contact) {
     setRequestStatus("pending");
     try {

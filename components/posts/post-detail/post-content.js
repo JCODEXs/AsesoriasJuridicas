@@ -1,34 +1,32 @@
-"use client"
-import ReactMarkdown from 'react-markdown';
-import { Document, Page, pdfjs } from 'react-pdf';
-import Image from 'next/image';
+"use client";
+import ReactMarkdown from "react-markdown";
+import { Document, Page, pdfjs } from "react-pdf";
+import Image from "next/image";
 // import { PrismLight } from 'react-syntax-highlighter';
 // import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 // import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
 // import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 // import FileViewer from 'react-file-viewer'
 
-  pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 // const FileViewer = dynamic(() => import('react-file-viewer'), { ssr: false });
 
-import PostHeader from './post-header';
-import classes from './post-content.module.css';
+import PostHeader from "./post-header";
+import classes from "./post-content.module.css";
 
- //SyntaxHighlighter.registerLanguage('js', js);
+//SyntaxHighlighter.registerLanguage('js', js);
 // SyntaxHighlighter.registerLanguage('css', css);
-
-
 
 function PostContent(props) {
   const { post } = props;
   const pdfPath = `/pdf/${post.slug}.pdf`;
-  console.log(pdfPath)
+  // console.log(pdfPath)
   const pdfUrl = `/pdf/${post.slug}.pdf`;
   return (
     <article className={classes.content}>
-     <iframe src={pdfUrl}/>
-     </article>
+      <iframe src={pdfUrl} />
+    </article>
   );
 }
 
@@ -74,7 +72,7 @@ function PostContent(props) {
 //     // code(code) {
 //     //   const { language, value } = code;
 //     //   return (
-        
+
 //     //     <SyntaxHighlighter
 //     //      style={docco}
 //     //      language="javascript"
@@ -92,7 +90,4 @@ function PostContent(props) {
 //     </article>
 //   );
 
-
-
 export default PostContent;
-
