@@ -20,11 +20,11 @@ function Hero() {
   };
   const soundButton = isMuted ? (
     <button onClick={handlePlay}>
-      <span class="material-symbols-outlined">volume_off</span>
+      <div className="material-symbols-outlined">volume_off</div>
     </button>
   ) : (
     <button onClick={handlePlay}>
-      <span class="material-symbols-outlined">volume_up</span>
+      <div className="material-symbols-outlined">volume_up</div>
     </button>
   );
   useEffect(() => {

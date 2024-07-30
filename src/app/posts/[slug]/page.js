@@ -10,10 +10,10 @@ const PDFViewer = dynamic(
 import { getPostData, getPostsFiles } from "../../../../lib/posts-util";
 
 function PostDetailPage({ params }) {
-  console.log(params);
+  // console.log(params);
 
   const postData = getPostData(params.slug);
-  console.log("post", postData);
+  // console.log("post", postData);
   return (
     <Fragment>
       <Head>

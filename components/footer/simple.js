@@ -7,7 +7,7 @@ import classes from "./simple.module.css";
 function FooterSimple() {
   return (
     <div
-      class="footer"
+      className="footer"
       style={{
         display: "flex",
         flexDirection: "column",

@@ -20,9 +20,9 @@ const PDFViewer = (props) => {
   const [pdfBlob, setPdfBlob] = useState(null);
   const [url, setUrl] = useState();
   const [scale, setScale] = useState(0.7);
-  console.log(url);
+  // console.log(url);
   useEffect(() => {
-    console.log("hi");
+    // console.log("hi");
     // Load the PDF file
     fetch(pdfPath, {
       headers: {
