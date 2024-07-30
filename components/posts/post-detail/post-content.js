@@ -7,9 +7,13 @@ import Image from "next/image";
 // import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
 // import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
 import dynamic from "next/dynamic";
-// import FileViewer from 'react-file-viewer'
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "react-pdf/dist/esm/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url
+).toString();
 // const FileViewer = dynamic(() => import('react-file-viewer'), { ssr: false });
 
 import PostHeader from "./post-header";

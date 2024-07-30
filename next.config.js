@@ -1,38 +1,31 @@
-const nodeExternals = require('webpack-node-externals');
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    // You may not need this, it's just to support moduleResolution: 'node16'
+    extensionAlias: {
+      ".js": [".tsx", ".ts", ".jsx", ".js"],
+    },
+    turbo: {
+      resolveAlias: {
+        // Turbopack does not support standard ESM import paths yet
+        "./Sample.js": "./app/Sample.tsx",
+        /**
+         * Critical: prevents " ⨯ ./node_modules/canvas/build/Release/canvas.node
+         * Module parse failed: Unexpected character '�' (1:0)" error
+         */
+        canvas: "./empty-module.ts",
+      },
+    },
+  },
+  /**
+   * Critical: prevents ''import', and 'export' cannot be used outside of module code" error
+   * See https://github.com/vercel/next.js/pull/66817
+   */
+  swcMinify: false,
+};
 
 module.exports = {
   reactStrictMode: true,
-  webpack: (config, { isServer }) => {
-//     if (isServer) {
-//       config.externals = [
-//         {
-//           canvas: 'canvas', // Exclude canvas
-//           'next/font/google/target.css': 'next/font/google/target.css', // Exclude next/font
-//         },
-//         nodeExternals({
-//           allowlist: [/\.(?!(?:jsx?|json)$).{1,5}$/i], // Only bundle files that are not .js, .jsx, or .json
-//         }),
-//       ];
-//     }
 
-    // Add a rule for .node files
-    config.module.rules.push({
-      test: /\.node$/,
-      use: 'node-loader', // or 'file-loader' if you prefer
-    });
-
-    // Add a rule for .jsx files
-//     config.module.rules.push({
-//       test: /\.jsx?$/,
-//       exclude: /node_modules/,
-//       use: {
-//         loader: 'babel-loader',
-//         options: {
-//           presets: ['@babel/preset-react'],
-//         },
-//       },
-//     });
-
-    return config;
-  },
+  nextConfig,
 };

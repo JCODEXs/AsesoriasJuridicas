@@ -1,9 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
+import { Worker } from "@react-pdf-viewer/core";
+import { Viewer } from "@react-pdf-viewer/core";
+import { pageNavigationPlugin } from "@react-pdf-viewer/page-navigation";
+// Import styles
+import { toolbarPlugin } from "@react-pdf-viewer/toolbar";
 
+import "@react-pdf-viewer/page-navigation/lib/styles/index.css";
+// Import the styles
+import "@react-pdf-viewer/core/lib/styles/index.css";
 // Configure pdfjs worker to load PDF files
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const PDFViewer = (props) => {
   const { post } = props;
@@ -13,7 +20,7 @@ const PDFViewer = (props) => {
   const [pdfBlob, setPdfBlob] = useState(null);
   const [url, setUrl] = useState();
   const [scale, setScale] = useState(0.7);
-
+  console.log(url);
   useEffect(() => {
     console.log("hi");
     // Load the PDF file
@@ -28,7 +35,7 @@ const PDFViewer = (props) => {
         setPdfBlob(blob);
         const urlBlob = URL.createObjectURL(blob);
         setUrl(urlBlob);
-        // console.log("hi",blob)
+        console.log("hi", blob);
       })
       .catch((error) => {
         console.error("Error loading PDF:", error);
@@ -69,9 +76,10 @@ const PDFViewer = (props) => {
       document.body.removeChild(a);
     }
   };
+  const pageNavigationPluginInstance = pageNavigationPlugin();
   return (
     <div className="pdfViewer">
-      <div className="pagination">
+      {/* <div className="pagination">
         <div style={{ display: "flex", justifyContent: "center" }}>
           Pagina {pageNumber} de {numPages}
         </div>
@@ -108,26 +116,47 @@ const PDFViewer = (props) => {
             <span class="material-symbols-outlined">download</span>
           </button>
         </div>
-      </div>
+      </div> */}
       <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          width: "100%",
-          height: "auto",
-          overflow: "scroll",
-          minHeight: "78vh",
-        }}
+      // style={{
+      //   display: "flex",
+      //   justifyContent: "center",
+      //   width: "100%",
+      //   height: "auto",
+      //   overflow: "scroll",
+      //   minHeight: "78vh",
+      // }}
       >
         {pdfBlob && (
-          <Document file={pdfPath} onLoadSuccess={onDocumentLoadSuccess}>
-            <Page
-              pageNumber={pageNumber}
-              scale={scale}
-              renderAnnotationLayer={false}
-              renderTextLayer={false}
-            />
-          </Document>
+          // <Document file={pdfPath} onLoadSuccess={onDocumentLoadSuccess}>
+          //   <Page
+          //     pageNumber={pageNumber}
+          //     scale={scale}
+          //     renderAnnotationLayer={false}
+          //     renderTextLayer={false}
+          //   />
+          <div>
+            <div className=" top-0 right-0  fix">
+              Sentencia {post.slug}{" "}
+              <button onClick={downloadPDF}>
+                <span class="material-symbols-outlined">download</span>
+              </button>
+            </div>
+
+            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+              <div
+                className="overflow-scroll
+                     max-h-screen"
+              >
+                <Viewer
+                  plugins={[pageNavigationPluginInstance]}
+                  initialPage={10}
+                  fileUrl={pdfPath}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                />
+              </div>
+            </Worker>
+          </div>
         )}
       </div>
     </div>
