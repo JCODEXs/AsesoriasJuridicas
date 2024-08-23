@@ -22,4 +22,4 @@ RUN npm cache clean --force
  EXPOSE 8080
 # Running the app
 # CMD ["npm","run","wsserver"]
-CMD [ "npm", "start"]s
+CMD [ "npm", "start"]
