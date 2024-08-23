@@ -28,10 +28,12 @@ function PostDetailPage({ params }) {
 export async function getStaticPaths() {
   const postFilenames = getPostsFiles();
 
-  const slugs = postFilenames.map((fileName) => fileName.replace(/\.pdf$/, ""));
+  const slugs = postFilenames?.map((fileName) =>
+    fileName.replace(/\.pdf$/, "")
+  );
 
   return {
-    paths: slugs.map((slug) => ({ params: { slug: slug } })),
+    paths: slugs?.map((slug) => ({ params: { slug: slug } })),
     fallback: false,
   };
 }
