@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:20-alpine
 # RUN apk update && apk upgrade &&     apk add --no-cache git
 # ENV PORT 80
 # Create app directory
@@ -22,4 +22,4 @@ RUN npm cache clean --force
  EXPOSE 8080
 # Running the app
 # CMD ["npm","run","wsserver"]
-CMD [ "npm", "start"]
+CMD [ "npm", "start"]s
